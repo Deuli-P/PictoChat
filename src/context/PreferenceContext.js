@@ -4,12 +4,26 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export const PreferencesContext = React.createContext({
   toggleTheme: () => {},
   isThemeDark: false,
+  isModalVisible: false,
+  setModalVisible: () => {},
 });
 
 export const PreferencesProvider = ({ children }) => {
   
   const [isThemeDark, setIsThemeDark] = useState(false);
 
+  const [list, setList] = React.useState([]);
+    
+  const addList = (item) => {
+      if (list.length < 4) {
+          setList([...list, item]);
+      }
+  };
+  
+  const removeList = (item) => {
+      setList(list.filter((i) => i.id !== item.id));
+  };
+  
   const getTheme = async () => {
     try {
       const value = await AsyncStorage.getItem('isThemeDark');

@@ -4,7 +4,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, useColorScheme } from "react-native";
 // NAVIGATION
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { NavigationContainer, useRoute } from "@react-navigation/native";
+import { NavigationContainer, useNavigation, useNavigationBuilder, useRoute } from "@react-navigation/native";
 // PAPER
 import { PaperProvider, MD3LightTheme, MD3DarkTheme} from "react-native-paper";
 import { createMaterialBottomTabNavigator } from 'react-native-paper/react-navigation';
@@ -14,6 +14,7 @@ import { PreferencesContext } from '../context/PreferenceContext';
 import HomeScreen from "../screens/HomeScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import Welcome from "../screens/Welcome";
+import ModalScreen from "../screens/ModalScreen";
 import Categories from "../screens/Categories";
 
 
@@ -23,7 +24,7 @@ const Tab = createMaterialBottomTabNavigator();
 
 export default function TabStackScreen() {
 
-
+  const navigation = useNavigation();
 
     return (
             <Tab.Navigator
@@ -43,14 +44,6 @@ export default function TabStackScreen() {
                   }
                 }
                 />
-                <Tab.Screen name="Categories"
-                    options={{
-                        tabBar:false,
-                    }
-                    }
-                >
-                    {() => <CategoryStackScreen/>}
-                </Tab.Screen>
               <Tab.Screen
                 name="Settings"
                 component={SettingsScreen}
@@ -193,10 +186,17 @@ export const StackScreen = () => {
                   headerShown: false,
                 }}
                 >
-                <Stack.Screen name="Welcome" component={Welcome} />
-                <Stack.Screen name="Main" component={TabStackScreen} />
+                  <Stack.Group screenOptions={{presentation: 'modal'}}>
+                    <Stack.Screen name="Modal" component={ModalScreen} />
+                  </Stack.Group>
+                  <Stack.Group>
+                    <Stack.Screen name="Welcome" component={Welcome} />
+                    <Stack.Screen name="Main" component={TabStackScreen} />
+                    <Stack.Screen name="Categories" component={Categories} />
+                  </Stack.Group>
               </Stack.Navigator>
             </NavigationContainer>
+            
           </PaperProvider>
       </PreferencesContext.Provider>
     );
@@ -204,11 +204,3 @@ export const StackScreen = () => {
 
   const CategorieStack = createNativeStackNavigator();
 
-
-const CategoryStackScreen = () => {
-    return (
-        < CategorieStack.Navigator>
-            <CategorieStack.Screen name="CategorieStack" component={Categories} options={{headerShown: false,}} />
-        </CategorieStack.Navigator>
-    );
-    }

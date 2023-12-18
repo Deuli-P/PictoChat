@@ -1,30 +1,26 @@
+import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import { useTheme, Button, Appbar } from 'react-native-paper';
-import CustomNavigationBar from '../components/CustomBarNavigation';
+import { useTheme, Button, Appbar, Portal} from 'react-native-paper';
+import { Categories} from './Categories'
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import ModalButton from '../components/ModalButton';
 
 const HomeScreen = () => {
 
-    
+    const [ PortalVisible, setPortalVisible ] = React.useState(false);
+
+    // NAVIGATION
     const navigation = useNavigation();
-    
     const navigateToSettings = () => {
         navigation.navigate('Settings');
     }
     const navigateToCategories = () => {
         navigation.navigate('Categories');
-        // navigation.navigate('CategorieScreen', {title: item.title, id: item.id, image:item.image});
-
-    }
-    const navigateToCategorieStack = () => {
-        navigation.navigate('CategorieStack');
-        // navigation.navigate('CategorieScreen', {title: item.title, id: item.id, image:item.image});
-
     }
 
+    // STYLES
     const theme = useTheme();
-    
     const styles = StyleSheet.create({
         button: {
             backgroundColor: theme.colors.primary,
@@ -55,39 +51,24 @@ const HomeScreen = () => {
     });
 
     return (
-    <SafeAreaProvider>
-        <Appbar.Header elevated>
-            <Appbar.Content title="Accueil" />
-        </Appbar.Header>
-        <View style={styles.background}>
-             <Text style={styles.title}>
-                Home Screen
-                </Text>
-            <Text style={styles.text}>
-                </Text>
-                <Button 
-                    mode='contained'
-                    onPress={()=> navigateToSettings()}
-                    style={styles.button}
-                >
-                        Go to Settings
-                </Button>
-                <Button 
-                    mode='contained'
-                    onPress={()=> navigateToCategorieStack()}
-                    style={styles.button}
-                >
-                        CategorieStack
-                </Button>
-                <Button 
-                    mode='contained'
-                    onPress={()=> navigateToCategories()}
-                    style={styles.button}
-                >
-                        Categories
-                </Button>
-                
-        </View>
+        <SafeAreaProvider>
+            <Appbar.Header elevated>
+                <Appbar.Content title="Accueil" />
+            </Appbar.Header>
+            <View style={styles.background}>
+                <Text style={styles.title}>
+                    Home Screen
+                    </Text>
+                <Text style={styles.text}>
+                    </Text>
+                    <Button 
+                        mode='contained'
+                        onPress={()=> navigateToCategories()}
+                        style={styles.button}
+                    >
+                            Categories
+                    </Button>
+            </View>
     </SafeAreaProvider>
     );
 
