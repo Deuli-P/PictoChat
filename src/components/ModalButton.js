@@ -1,16 +1,18 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { IconButton } from 'react-native-paper';
+import { IconButton, useTheme } from 'react-native-paper';
 import React from 'react'
 
 
-const ModalButton = () => {
+const ModalButton = ({isModalVisible, setIsModalVisible}) => {
 
-    
+    const {theme } = useTheme();
+
   return (
     <IconButton 
-        icon="resize"
+        icon={isModalVisible ? "close" : "resize"}
         size={60}
         style={styles.container}
+        onPress={() => { setIsModalVisible(!isModalVisible);}}
     >
     </IconButton>
   )

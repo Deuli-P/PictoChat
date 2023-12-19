@@ -4,7 +4,6 @@ import { Appbar, Badge, Button, Icon } from 'react-native-paper';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useRoute } from "@react-navigation/native";
 import { useEffect, useState } from "react";
-import App from '../../App';
 
 const Categories = ({navigation }) => {
 
@@ -51,9 +50,6 @@ const Categories = ({navigation }) => {
             <Text 
             > Count : {count.length}
             </Text>
-            <Button onPress={()=> navigation.navigate("Modal")}>
-                <Icon source= "resize" />
-            </Button>
         </View>
         </SafeAreaProvider>
     );

@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, useC } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import { useTheme, Button } from 'react-native-paper';
 
-const Welcome = () => {
+const Welcome = ({setAppOpening}) => {
 
 
     const navigation = useNavigation();
@@ -50,7 +50,7 @@ const Welcome = () => {
         <Text style={styles.title}>
                  Welcome sur l'application</Text>
             <TouchableOpacity
-                onPress={() => navigateToHome()}
+                onPress={()=> setAppOpening(false)}
                 style={styles.button}
 
                 >

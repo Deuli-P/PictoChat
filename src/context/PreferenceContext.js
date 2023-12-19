@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { storeTheme } from '../config/AsyncStorage';
 
 export const PreferencesContext = React.createContext({
   toggleTheme: () => {},
@@ -10,7 +10,7 @@ export const PreferencesContext = React.createContext({
 
 export const PreferencesProvider = ({ children }) => {
   
-  const [isThemeDark, setIsThemeDark] = useState(false);
+  const [isThemeDark, setIsThemeDark] = useState(null);
 
   const [list, setList] = React.useState([]);
     
@@ -23,36 +23,19 @@ export const PreferencesProvider = ({ children }) => {
   const removeList = (item) => {
       setList(list.filter((i) => i.id !== item.id));
   };
-  
-  const getTheme = async () => {
-    try {
-      const value = await AsyncStorage.getItem('isThemeDark');
-      if(value !== null) {
-        setIsThemeDark(JSON.parse(value));
-      }
-    } catch(e) {
-      console.error(e);
-    }
-  }
 
-  useEffect(() => {
-    getTheme();
-  }, []);
-
-  useEffect(() => {
-    try {
-      AsyncStorage.setItem('isThemeDark', JSON.stringify(isThemeDark));
-    } catch (e) {
-      console.error(e);
-    }
-  }, [isThemeDark]);
+  const clearList = (item) => {
+      setList([]);
+  };
 
   const toggleTheme = () => {
     setIsThemeDark(!isThemeDark);
+    const newTheme = !isThemeDark;
+    storeTheme(newTheme);
   };
 
   return (
-    <PreferencesContext.Provider value={{ isThemeDark, toggleTheme }}>
+    <PreferencesContext.Provider value={{ isThemeDark, toggleTheme, list, addList, clearList, removeList }}>
       {children}
     </PreferencesContext.Provider>
   );
