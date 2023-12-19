@@ -1,13 +1,12 @@
 import React from 'react';
 import { View } from 'react-native';
 import { Text } from 'react-native-paper';
-import { CustomNavigationBar} from '../components/CustomBarNavigation';
 
-const ModalScreen = () => {
+const ModalScreen = (ref, props) => {
+
     return (
         <View>
-            <CustomNavigationBar /> 
-            <Text> Modal</Text>
+            <Text>Modal Screen</Text> 
         </View>
     );
 };

@@ -2,9 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import { useTheme, Button, Appbar, Portal} from 'react-native-paper';
-import { Categories} from './Categories'
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import ModalButton from '../components/ModalButton';
 
 const HomeScreen = () => {
 

@@ -1,6 +1,5 @@
 // REACT-NATIVE
 import React from "react";
-import { StatusBar } from "expo-status-bar";
 import { useColorScheme } from "react-native";
 // NAVIGATION
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -11,11 +10,8 @@ import { createMaterialBottomTabNavigator } from 'react-native-paper/react-navig
 // SCEENS
 import HomeScreen from "../screens/HomeScreen";
 import SettingsScreen from "../screens/SettingsScreen";
-import ModalScreen from "../screens/ModalScreen";
 import Categories from "../screens/Categories";
 // COMPONENTS
-import ModalButton from "../components/ModalButton";
-import { Modal } from "react-native-paper";
 
 
 const Stack = createNativeStackNavigator();
@@ -68,13 +64,8 @@ export const StackScreen = () => {
                   headerShown: false,
                 }}
                 >
-                  <Stack.Group screenOptions={{presentation: 'modal'}}>
-                    <Stack.Screen name="Modal" component={ModalScreen} />
-                  </Stack.Group>
-                  <Stack.Group>
                     <Stack.Screen name="Main" component={TabStackScreen} />
                     <Stack.Screen name="Categories" component={Categories} />
-                  </Stack.Group>
               </Stack.Navigator>
             </NavigationContainer>
     );

@@ -4,8 +4,6 @@ import { storeTheme } from '../config/AsyncStorage';
 export const PreferencesContext = React.createContext({
   toggleTheme: () => {},
   isThemeDark: false,
-  isModalVisible: false,
-  setModalVisible: () => {},
 });
 
 export const PreferencesProvider = ({ children }) => {
