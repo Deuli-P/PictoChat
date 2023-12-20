@@ -54,7 +54,7 @@ const SettingsScreen = ({navigation}) => {
                     Settings Screen
                 </Text>
                 <View style={{ flexDirection: "row",justifyContent: "center", alignItems: "center"}}>
-                    <Text style={styles.text}>
+                    <Text style={styles.buttonText}>
                         Siwtch theme:
                     </Text>
                     <Switch 
@@ -64,6 +64,7 @@ const SettingsScreen = ({navigation}) => {
                 >
                 </Switch>
                 </View>
+                    <Text style={styles.text}>Photos provided by Pexels</Text>
             </View>
         </SafeAreaProvider>
     );

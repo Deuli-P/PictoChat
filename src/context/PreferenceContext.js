@@ -4,6 +4,10 @@ import { storeTheme } from '../config/AsyncStorage';
 export const PreferencesContext = React.createContext({
   toggleTheme: () => {},
   isThemeDark: false,
+  list: [],
+  addList: () => {},
+  clearList: () => {},
+  removeList: () => {},
 });
 
 export const PreferencesProvider = ({ children }) => {
@@ -14,10 +18,13 @@ export const PreferencesProvider = ({ children }) => {
     
   const addList = (item) => {
       if (list.length < 4) {
-          setList([...list, item]);
+          setList(prevList=> [...prevList,item]);
+          console.log("/////////////////");
+          console.log("[ADD]");
+          console.log("/////////////////");
       }
   };
-  
+
   const removeList = (item) => {
       setList(list.filter((i) => i.id !== item.id));
   };
@@ -25,6 +32,7 @@ export const PreferencesProvider = ({ children }) => {
   const clearList = (item) => {
       setList([]);
   };
+
 
   const toggleTheme = () => {
     setIsThemeDark(!isThemeDark);

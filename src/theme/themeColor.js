@@ -41,7 +41,7 @@ const lightColor={
       },
       "surfaceDisabled": "rgba(29, 27, 30, 0.12)",
       "onSurfaceDisabled": "rgba(29, 27, 30, 0.38)",
-      "backdrop": "rgba(51, 47, 55, 0.4)"
+      "backdrop": "rgba(51, 47, 55, 0.7)"
     }
 }
 const darkColor={
@@ -85,7 +85,7 @@ const darkColor={
       },
       "surfaceDisabled": "rgba(231, 225, 229, 0.12)",
       "onSurfaceDisabled": "rgba(231, 225, 229, 0.38)",
-      "backdrop": "rgba(51, 47, 55, 0.4)"
+      "backdrop": "rgba(238, 237, 239, 0.7)"
     }
 }
 export const LightTheme ={
