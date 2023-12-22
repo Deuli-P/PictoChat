@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, FlatList, ScrollView} from 'react-native';
+import { View, Text, StyleSheet, FlatList, ScrollView} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import { useTheme, Button, Appbar, Portal, ActivityIndicator} from 'react-native-paper';
+import { useTheme, Appbar, ActivityIndicator, Button} from 'react-native-paper';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { fetchingData } from '../config/Axios';
 import HanddlingCards from '../components/Cards/HanddlingCards';
+import { PreferencesContext } from '../context/PreferenceContext';
 
 const HomeScreen = () => {
     // NAVIGATION
@@ -45,6 +46,8 @@ const HomeScreen = () => {
         }
     });
 
+    const context = React.useContext(PreferencesContext);
+
     // FETCH DATA
     const [dataFetch, setDataFetch] = React.useState();
     const [isLoading, setIsLoading] = React.useState(true);
@@ -77,7 +80,9 @@ const HomeScreen = () => {
                         Catégories:
                     </Text>
                     <View>
-                        <Text style={styles.text}> Ici des Categories en carrousel</Text>
+
+                        <Text style={styles.text}>{context.list}</Text>
+                        <Button onPress={navigateToCategories}>Categories </Button>
                     </View>
                 </View>
                 <View>
@@ -94,7 +99,7 @@ const HomeScreen = () => {
                                     <HanddlingCards
                                         item={item}
                                         key={item.id}
-                                        theme={theme}
+                                        
                                     />
                                 ))
                             )

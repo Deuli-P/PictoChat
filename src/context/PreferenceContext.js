@@ -4,8 +4,12 @@ import { storeTheme } from '../config/AsyncStorage';
 
 
 
+
 export const PreferencesContext = React.createContext({
   isThemeDark: false,
+  toggleTheme: () => {},
+  list: [],
+  listDispatch: () => {},
 });
 
 export const PreferencesProvider = ({ children }) => {
@@ -22,6 +26,7 @@ export const PreferencesProvider = ({ children }) => {
   const value={
     isThemeDark,
     toggleTheme,
+    list,
   }
   return (
     <PreferencesContext.Provider value={value}>

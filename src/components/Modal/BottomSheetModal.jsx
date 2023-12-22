@@ -18,7 +18,7 @@ const BottomSheetModalComponent = ({theme}) => {
     const snapPoints = React.useMemo(() => ["80%", "95%"], []);
     const bottomSheetRefModal = React.useRef(null);
 
-    const { list } = React.useContext(PreferencesContext);
+    const context = React.useContext(PreferencesContext);
 
 
     const styles = StyleSheet.create({
@@ -94,6 +94,8 @@ const BottomSheetModalComponent = ({theme}) => {
         ),
         []
       );
+
+      const list = context.list;
       
       const renderHandledrop = React.useCallback(
         props => (
@@ -131,7 +133,7 @@ const BottomSheetModalComponent = ({theme}) => {
                     key={index}
                     item={index}
                     id={index}
-                    setlist={setList}
+                    dispatch={context.listDispatch}
                     lenght={list.length}
                     list = {list}
                     handleRemove={null}

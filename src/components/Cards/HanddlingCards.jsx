@@ -4,44 +4,56 @@ import React from 'react'
 import { Card, useTheme } from 'react-native-paper';
 import { PreferencesContext } from '../../context/PreferenceContext';
 
-const HanddlingCards = ({item,theme}) => {
+const HanddlingCards = ({item}) => {
   // THEME pas transmis
-  // const theme = useTheme();
+  const theme = useTheme();
 
 
   const [isSelect, setIsSelect] = React.useState(false);
   const context = React.useContext(PreferencesContext);
 
   const card = {
-    "id": item.id,
-    "cover": item.thumbnailUrl,
-    "title": item.title,
+    id: item.id,
+    cover: item.thumbnailUrl,
+    title: item.title,
   }
 
   React.useEffect(() => {
-    console.log("[HanddlingCards] Card: ", card);
     console.log("[HanddlingCards] list: ", context.list);
   },[])
 
   function addList(e){
     if (context.list.length < 4) {
-      context.listDispatch("add",e);
+      context.listDispatch({type: 'add', playload: e });
+      if(context.list.length < 1){
+        console.log("[HanddlingCards] Rien a été ajouté");
+        return
+      }
+      else{
+        console.log("[HanddlingCards] remove: ", context.list.length);
+        setIsSelect(true);
+      }
     }
   }
   
   function removeList(e){
-    context.listDispatch("remove",e);
+    if(context.list.length > 0){
+      context.listDispatch({type:"remove",playload:e});
+      console.log("[HanddlingCards] addList: ", context.list.length);
+    }
+    else{
+      console.log("[HanddlingCards] List est vide ");
+    }
+    setIsSelect(false);
   }
   
-
   const handleSelect = (e) => {
+    console.log("[HanddlingCards]Id object select:", e.id);
     if (isSelect) {
       removeList(e);
     } else {
       addList(e);
-      console.log("[HanddlingCards] addList: ", list);
     }
-    setIsSelect(!isSelect);
 };
 
 React.useEffect(() => {
@@ -76,9 +88,11 @@ React.useEffect(() => {
 
   return (
     <Card 
+      theme={theme}
       style={isSelect ? styles.containerSelected : styles.containerUnSelected}
       id={item.id}
-      onPress={()=>handleSelect(card)}>
+      onPress={()=>handleSelect(card)}
+      >
         <Card.Cover source={{uri:item.thumbnailUrl}} alt={item.title} style={styles.image}/>
     </Card>
   )
