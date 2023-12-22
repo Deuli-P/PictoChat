@@ -41,6 +41,7 @@ const HomeScreen = () => {
             fontSize: 40,
             fontWeight: 'bold',
             marginBottom: 10,
+            paddingHorizontal: 10,
         }
     });
 
@@ -54,21 +55,15 @@ const HomeScreen = () => {
             try {
                 const data = await fetchingData();
                 setDataFetch(data);
-                console.log('[HomeScreen] dataFetch: ', dataFetch);
+                console.log('[HomeScreen] dataFetch: ok');
                 setIsLoading(false);
             } catch (error) {
                 setError(error);
                 setIsLoading(true);
             }
         };
-
         fetchData();
     }, []);
-
-
-
-
-
 
 
     return (
@@ -85,11 +80,11 @@ const HomeScreen = () => {
                         <Text style={styles.text}> Ici des Categories en carrousel</Text>
                     </View>
                 </View>
-                <View style={{flexDirection: "row", flexWrap: "wrap",marginHorizontal: 10}}>
+                <View>
                     <Text style={styles.title}>
                         Derniers articles:
                     </Text>
-                    <View>
+                    <View style={{flex: 1, flexDirection: "row", flexWrap: "wrap", justifyContent:"center", alignItems:"center",width: "100%",height: "100%"}}>
                         {error && <Text style={{color: theme.colors.error, backgroundColor: theme.colors.errorContainer}}>Une erreur est survenue</Text>}
                         {isLoading ?
                             (<ActivityIndicator size="large" style={{color: "blue"}} />)
@@ -97,9 +92,10 @@ const HomeScreen = () => {
                             (
                                 dataFetch.map((item) => (
                                     <HanddlingCards
-                                         item={item}
-                                         key={item.id}
-                                         />
+                                        item={item}
+                                        key={item.id}
+                                        theme={theme}
+                                    />
                                 ))
                             )
                         }
@@ -109,8 +105,6 @@ const HomeScreen = () => {
     </SafeAreaProvider>
     );
 };
-
-
 
 export default HomeScreen;
 

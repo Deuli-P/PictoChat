@@ -1,38 +1,16 @@
-import React, { useState, useEffect } from 'react';
+// PreferenceContext.js
+import React from 'react';
 import { storeTheme } from '../config/AsyncStorage';
 
+
+
 export const PreferencesContext = React.createContext({
-  toggleTheme: () => {},
   isThemeDark: false,
-  list: [],
-  addList: () => {},
-  clearList: () => {},
-  removeList: () => {},
 });
 
 export const PreferencesProvider = ({ children }) => {
   
-  const [isThemeDark, setIsThemeDark] = useState(null);
-
-  const [list, setList] = React.useState([]);
-    
-  const addList = (item) => {
-      if (list.length < 4) {
-          setList(prevList=> [...prevList,item]);
-          console.log("/////////////////");
-          console.log("[ADD]");
-          console.log("/////////////////");
-      }
-  };
-
-  const removeList = (item) => {
-      setList(list.filter((i) => i.id !== item.id));
-  };
-
-  const clearList = (item) => {
-      setList([]);
-  };
-
+  const [isThemeDark, setIsThemeDark] = React.useState(null);
 
   const toggleTheme = () => {
     setIsThemeDark(!isThemeDark);
@@ -40,8 +18,13 @@ export const PreferencesProvider = ({ children }) => {
     storeTheme(newTheme);
   };
 
+
+  const value={
+    isThemeDark,
+    toggleTheme,
+  }
   return (
-    <PreferencesContext.Provider value={{ isThemeDark, toggleTheme, list, addList, clearList, removeList }}>
+    <PreferencesContext.Provider value={value}>
       {children}
     </PreferencesContext.Provider>
   );

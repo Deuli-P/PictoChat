@@ -17,7 +17,7 @@ export const fetchingData = async () => {
         const response = await fetchPexels.get('/albums/1/photos');
         const data = response.data;
         console.log("/////////////////");
-        console.log("[FETCH]data",data);
+        console.log("[FETCH]data fetch");
         console.log("/////////////////");
         return data;
     }

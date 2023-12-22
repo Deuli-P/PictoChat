@@ -13,83 +13,39 @@ import { PreferencesContext } from "./src/context/PreferenceContext";
 import { useTheme } from "react-native-paper";
 import { getTheme, storeTheme } from "./src/config/AsyncStorage";
 import { DarkTheme, LightTheme } from "./src/theme/themeColor";
-import { Animated } from "react-native-reanimated";
-import {
-  BottomSheetModalProvider,
-  BottomSheetModal,
-  BottomSheetBackdrop,
-  BottomSheetHandle
-} from "@gorhom/bottom-sheet";
-import ShowCards from "./src/components/Cards/ShowCards";
+import Welcome from "./src/screens/Welcome";
+import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
+import BottomSheetModalComponent from "./src/components/Modal/BottomSheetModal";
 
-const Welcome = ({ setAppOpening, isLoading }) => {
-  // STYLES
-  const theme = useTheme();
-  const styles = StyleSheet.create({
-    button: {
-      backgroundColor: theme.colors.primary,
-      paddingHorizontal: 48,
-      paddingVertical: 16,
-      borderRadius: 10,
-      marginTop: 10,
-      color: theme.colors.text,
-    },
-    buttonText: {
-      fontSize: 36,
-      color: "white",
-    },
-    background: {
-      backgroundColor: theme.colors.background,
-      justifyContent: "center",
-      alignItems: "center",
-      flex: 1,
-      color: theme.colors.text,
-    },
-    text: {
-      color: theme.colors.text,
-    },
-    title: {
-      color: theme.colors.primary,
-      fontSize: 40,
-      fontWeight: "bold",
-      marginBottom: 10,
-    },
-    loader: {
-      color: theme.colors.primary,
-      marginTop: 30,
-      transform: [{ scale: 2 }],
-    },
-  });
 
-  return (
-    <SafeAreaProvider style={styles.background}>
-      <Text style={styles.title}>Welcome</Text>
-      {isLoading ? (
-        <ActivityIndicator size="large" style={styles.loader} />
-      ) : (
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => setAppOpening(false)}
-          activeOpacity={0.7}
-        >
-          <Text style={styles.buttonText}>Start</Text>
-        </TouchableOpacity>
-      )}
-    </SafeAreaProvider>
-  );
-};
+const initialState = []
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'add':
+      return [...state, action.item]
+    case 'remove':
+      return state.filter((item) => item.id !== action.id)
+    case 'clear':
+      return initialState
+    default:
+      return state
+  }
+}
+
 
 export default function App() {
 
-
-  const { list , removeList } = React.useContext(PreferencesContext);
+  const [list, listDispatch] = React.useReducer(reducer, initialState)
+  
   // THEME
   const [isThemeDark, setIsThemeDark] = React.useState(false);
+
   const toggleTheme = React.useCallback(() => {
     setIsThemeDark(!isThemeDark);
     const newTheme = !isThemeDark;
     storeTheme(newTheme);
   }, [isThemeDark]);
+
   const fetchThemeData = async () => {
     try {
       const value = await getTheme();
@@ -105,7 +61,7 @@ export default function App() {
     }
   };
   React.useEffect(() => {
-    console.log("[APP]APP STARTED:", list);
+    console.log("[APP]START list:", list);
     fetchThemeData();
   }, []);
   const theme = isThemeDark ? DarkTheme : LightTheme;
@@ -114,6 +70,7 @@ export default function App() {
       toggleTheme,
       isThemeDark,
       list,
+      listDispatch,
     }),
     [toggleTheme, isThemeDark]
   );
@@ -177,94 +134,19 @@ export default function App() {
   const [appOpening, setAppOpening] = React.useState(true);
 
   // BOTTOM SHEET
-  const bottomSheetRefModal = React.useRef(null);
-  const snapPoints = React.useMemo(() => ["80%", "95%"], []);
-  const [isBottomSheetOpen, setIsBottomSheetOpen] = React.useState(false);
-  const HandlePresentModal = () => {
-    bottomSheetRefModal.current.present();
-    setIsBottomSheetOpen(true);
-  };
-  const renderBackdrop = React.useCallback(
-    props => (
-      <BottomSheetBackdrop
-        {...props}
-        disappearsOnIndex={-1}
-        appearsOnIndex={2}
-        opacity={0.7}
-        color={theme.colors.backdrop}
-      />
-    ),
-    []
-  );
-  const renderHandledrop = React.useCallback(
-    props => (
-      <BottomSheetHandle
-        {...props}
-        opacity={0.7}
-        color={theme.colors.background}
-        style={{ transform: [{ scaleX: 3 }]}}
-      />
-    ),
-    []
-  );
-
-
-
   return (
     <SafeAreaProvider>
       <GestureHandlerRootView style={{ flex: 1 }}>
-        <PreferencesContext.Provider value={{ isThemeDark, toggleTheme }}>
+        <PreferencesContext.Provider value={preferences}>
           <PaperProvider theme={theme}>
-            <BottomSheetModalProvider>
+            <BottomSheetModalProvider theme={theme}>
               {appOpening && (
                 <Welcome setAppOpening={setAppOpening} isLoading={isLoading} />
               )}
               {appOpening ? null : (
                 <>
                   <StackScreen />
-                  <BottomSheetModal
-                    ref={bottomSheetRefModal}
-                    snapPoints={snapPoints}
-                    index={0}
-                    style={styles.ModalWindow}
-                    backgroundStyle={{
-                      backgroundColor: theme.colors.ModalWindow,
-                    }}
-                    backdropComponent={renderBackdrop}
-                    handleComponent={renderHandledrop}
-                  >
-                    <View style={styles.background}>
-                      <View style={ list?.length >2 ? styles.listContainerBig : styles.listContainerLittle} >
-                        {list?.map((item, index) => (
-                          <ShowCards 
-                          key={index}
-                          item={index}
-                          id={index}
-                          setlist={setList}
-                          lenght={list.length}
-                          list = {list}
-                          handleRemove={removeList(item)}
-                          />
-                        ))
-                        }
-                      </View>
-                      <FAB
-                        icon="close"
-                        onPress={() => bottomSheetRefModal.current.close()}
-                        style={styles.buttonModalClose}
-                        theme={theme}
-                      />
-                    </View>
-                  </BottomSheetModal>
-                  <FAB
-                    icon={
-                      isBottomSheetOpen ? "stretch-to-page-outline" : "close"
-                    }
-                    size="large"
-                    style={styles.buttonModalOpen}
-                    theme={theme}
-                    onPress={HandlePresentModal}
-                  />
+                  <BottomSheetModalComponent theme={theme}/>
                 </>
               )}
             </BottomSheetModalProvider>

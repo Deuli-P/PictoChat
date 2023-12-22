@@ -13,7 +13,6 @@ import SettingsScreen from "../screens/SettingsScreen";
 import Categories from "../screens/Categories";
 // COMPONENTS
 
-
 const Stack = createNativeStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
 
