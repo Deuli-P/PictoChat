@@ -1,16 +1,10 @@
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import React, { useEffect } from "react";
+import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { StackScreen } from "./src/Navigation/NavigationStack";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import {
-  PaperProvider,
-  ActivityIndicator,
-  FAB,
-  Card,
-} from "react-native-paper";
+import {  StyleSheet } from "react-native";
+import { PaperProvider } from "react-native-paper";
 import { PreferencesContext } from "./src/context/PreferenceContext";
-import { useTheme } from "react-native-paper";
 import { getTheme, storeTheme } from "./src/config/AsyncStorage";
 import { DarkTheme, LightTheme } from "./src/theme/themeColor";
 import Welcome from "./src/screens/Welcome";
@@ -18,20 +12,20 @@ import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import BottomSheetModalComponent from "./src/components/Modal/BottomSheetModal";
 
 
+//
 const initialState = []
 const reducer = (state, action) => {
   switch (action.type) {
     case 'add':
-      return [...state, action.item]
-    case 'remove':
-      return state.filter((item) => item.id !== action.id)
+      return [...state, action.playload]
+    case 'remove':{
+      return state.filter((e) => e.id != action.playload.id)}
     case 'clear':
       return initialState
     default:
       return state
   }
 }
-
 
 export default function App() {
 
@@ -74,6 +68,7 @@ export default function App() {
     }),
     [toggleTheme, isThemeDark]
   );
+
 
   const styles = StyleSheet.create({
     buttonModalOpen: {
