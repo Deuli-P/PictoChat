@@ -6,6 +6,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { fetchingData } from '../config/Axios';
 import HanddlingCards from '../components/Cards/HanddlingCards';
 import CustomNavigationBar from '../components/CustomBarNavigation';
+import CategoriesCards from '../components/Cards/CategoriesCards';
 
 const HomeScreen = () => {
     // NAVIGATION
@@ -52,6 +53,7 @@ const HomeScreen = () => {
     const [error, setError] = React.useState();
 
     React.useEffect(() => {
+
         const fetchData = async () => {
             try {
                 const data = await fetchingData();
@@ -76,7 +78,7 @@ const HomeScreen = () => {
                         Catégories:
                     </Text>
                     <View>
-                        <Text style={styles.text}> Ici des Categories en carrousel</Text>
+                        <CategoriesCards dataFetch={dataFetch}/>
                     </View>
                 </View>
                 <View>

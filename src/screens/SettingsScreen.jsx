@@ -1,7 +1,7 @@
-import { View, Text, TouchableOpacity, StyleSheet, useColorScheme,  } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import { useTheme, Button, Switch, Appbar } from 'react-native-paper';
+import { Switch } from 'react-native-paper';
 import { ThemeContext } from '../context/ThemeContext';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import  CustomNavigationBar  from '../components/CustomBarNavigation';
@@ -45,7 +45,7 @@ const SettingsScreen = ({navigation, route}) => {
 
     return (
         <SafeAreaProvider>
-            <CustomNavigationBar title="Parametres" />
+            <CustomNavigationBar title="Paramêtres" />
             <View style={styles.background}>
                 <Text style={styles.title}>
                     Settings Screen

@@ -1,5 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
-import { useTheme} from 'react-native-paper';
+import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import {
     BottomSheetModal,
@@ -9,6 +8,7 @@ import {
 import { FAB } from 'react-native-paper';
 import ShowCards from '../Cards/ShowCards';
 import useList from '../../context/List/ListContext';
+import { ThemeContext } from '../../context/ThemeContext';
 
 const BottomSheetModalComponent = () => {
 
@@ -19,7 +19,7 @@ const BottomSheetModalComponent = () => {
 
     const { list } = useList();
 
-    const { theme } = useTheme();
+    const { theme } = React.useContext(ThemeContext);
 
 
     const styles = StyleSheet.create({
@@ -41,7 +41,7 @@ const BottomSheetModalComponent = () => {
           alignItems: "center",
         },
         background: {
-          backgroundColor: "darkgrey",
+          backgroundColor: theme.colors.onSecondary,
           justifyContent: "center",
           alignItems: "center",
           flex: 1,
@@ -66,14 +66,14 @@ const BottomSheetModalComponent = () => {
           backgroundColor: "white",
           width: "100%",
           borderRadius: 30,
-          shadowColor: "black",
+          shadowColor: theme.colors.shadow,
           shadowOffset: {
             width: 0,
             height: -10,
           },
           shadowOpacity: 0.4,
           shadowRadius: 5,
-          color: "black",
+          color: theme.colors.text,
         },
       });
 
@@ -89,7 +89,7 @@ const BottomSheetModalComponent = () => {
             disappearsOnIndex={-1}
             appearsOnIndex={2}
             opacity={0.7}
-            color={"grey"}
+            color={theme.colors.backdrop}
           />
           
         ),
@@ -101,7 +101,7 @@ const BottomSheetModalComponent = () => {
           <BottomSheetHandle
             {...props}
             opacity={0.7}
-            // color={theme.colors.background}
+            color={theme.colors.background}
             style={{ transform: [{ scaleX: 3 }]}}
           />
         ),
@@ -120,7 +120,7 @@ const BottomSheetModalComponent = () => {
             index={0}
             style={styles.ModalWindow}
             backgroundStyle={{
-                backgroundColor: "darkgrey",
+                backgroundColor: theme.colors.onSecondary,
             }}
             backdropComponent={renderBackdrop}
             handleComponent={renderHandledrop}

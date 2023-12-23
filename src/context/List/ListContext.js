@@ -11,15 +11,13 @@ export const ListProvider = ({ children }) => {
 
 
     const addList = (item) => {
-        if ( state.list.length < 4){
-            const newItem = state.list.concat(item)
-            dispatch({
-                type: "ADD_ITEM",
-                payload: {
-                    list: newItem 
-                } 
-            });
-        }
+                const newItem = state.list.concat(item)
+                dispatch({
+                    type: "ADD_ITEM",
+                    payload: {
+                        list: newItem 
+                    } 
+                });
     };
 
     const removeList = (item) => {

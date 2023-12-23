@@ -1,7 +1,7 @@
 // HanddlingCard.jsx
 import { StyleSheet } from 'react-native'
 import React from 'react'
-import { Card } from 'react-native-paper';
+import { Card, Icon } from 'react-native-paper';
 import { ThemeContext } from '../../context/ThemeContext';
 import useList from '../../context/List/ListContext';
 
@@ -9,6 +9,7 @@ const HanddlingCards = ({item}) => {
   
   const { theme } = React.useContext(ThemeContext);
   const [ isSelect, setIsSelect ] = React.useState(false)
+  const [ alreadyInList, setAlreadyInList ] = React.useState(false)
 
 
   const { list , addList, removeList } = useList();
@@ -29,12 +30,14 @@ const HanddlingCards = ({item}) => {
     }
   }
   
-  
-  
+  // Si objet déjà dans liste alors X d'error pendant 1500ms par dessus du cover
+
+
   const handleSelect = (e) => {
     if (!isSelect && list.length < 4) {
-      addList(e);
-      setIsSelect(true);
+        addList(e);
+        setIsSelect(true);
+        setAlreadyInList(false);
     } else {
       removeList(e);
       setIsSelect(false);
@@ -42,9 +45,6 @@ const HanddlingCards = ({item}) => {
     console.log("[HCards] STATE LIST LENGTH: ", list.length);
 };
 
-React.useEffect(() => {
-    console.log(`[HCards]Card ${item.id}:${isSelect}`);
-  },[isSelect])
 
   const styles = StyleSheet.create({
     containerSelected:{
@@ -64,20 +64,28 @@ React.useEffect(() => {
       justifyContent: 'center',
       alignItems: 'center',
       margin: 3,
+      position: 'relative',
     },
     image: {
       width: 75,
       height: 75,
       objectFit: 'cover',
-    }
+    },
   })
+
+
+  React.useEffect(() => {
+    if( list.find((currentItem) => currentItem.title === item.title)){
+      setIsSelect(true);
+    }
+  },[list])
 
   return (
     <Card 
       style={isSelect ? styles.containerSelected : styles.containerUnSelected}
       id={item.id}
       onPress={()=>handleSelect(card)}>
-        <Card.Cover source={{uri:item.thumbnailUrl}} alt={item.title} style={styles.image}/>
+         <Card.Cover source={{uri:item.thumbnailUrl}} alt={item.title} style={styles.image}/>
     </Card>
   )
 }

@@ -8,7 +8,7 @@ import useList from '../../context/List/ListContext'
 const ShowCards = ({item}) => {
 
 
-  const { theme } = useTheme();
+  const { theme } = React.useContext(ThemeContext);
 
   const { list } = useList();
 
@@ -44,7 +44,7 @@ const ShowCards = ({item}) => {
       justifyContent: 'center',
       alignItems: 'center',
       padding:10,
-
+      backgroundColor: theme.colors.secondary,
     },
     image:{
       width: isDimensionsContent,
@@ -56,7 +56,7 @@ const ShowCards = ({item}) => {
 
 
   return (
-    <Card style={styles.container} theme={theme}
+    <Card style={styles.container}
       onPress={()=>console.log("click showCard")}
     >
       <Card.Cover source={{ uri: list[item].cover}} style={styles.image}/>
