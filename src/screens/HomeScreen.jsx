@@ -5,6 +5,7 @@ import { useTheme, Button, Appbar, Portal, ActivityIndicator} from 'react-native
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { fetchingData } from '../config/Axios';
 import HanddlingCards from '../components/Cards/HanddlingCards';
+import CustomNavigationBar from '../components/CustomBarNavigation';
 
 const HomeScreen = () => {
     // NAVIGATION
@@ -68,9 +69,7 @@ const HomeScreen = () => {
 
     return (
         <SafeAreaProvider>
-            <Appbar.Header elevated>
-                <Appbar.Content title="Accueil" />
-            </Appbar.Header>
+            <CustomNavigationBar title="Accueil"/>
             <ScrollView style={styles.background}>
                 <View>
                     <Text style={styles.title}>

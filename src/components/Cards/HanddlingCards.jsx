@@ -1,16 +1,17 @@
 // HanddlingCard.jsx
 import { StyleSheet } from 'react-native'
 import React from 'react'
-import { Card, useTheme } from 'react-native-paper';
-import { PreferencesContext } from '../../context/PreferenceContext';
+import { Card } from 'react-native-paper';
+import { ThemeContext } from '../../context/ThemeContext';
+import useList from '../../context/List/ListContext';
 
-const HanddlingCards = ({item,theme}) => {
-  // THEME pas transmis
-  // const theme = useTheme();
+const HanddlingCards = ({item}) => {
+  
+  const { theme } = React.useContext(ThemeContext);
+  const [ isSelect, setIsSelect ] = React.useState(false)
 
 
-  const [isSelect, setIsSelect] = React.useState(false);
-  const context = React.useContext(PreferencesContext);
+  const { list , addList, removeList } = useList();
 
   const card = {
     "id": item.id,
@@ -19,33 +20,30 @@ const HanddlingCards = ({item,theme}) => {
   }
 
   React.useEffect(() => {
-    console.log("[HanddlingCards] Card: ", card);
-    console.log("[HanddlingCards] list: ", context.list);
-  },[])
+    ItemNotSelected()
+  },[list])
 
-  function addList(e){
-    if (context.list.length < 4) {
-      context.listDispatch("add",e);
+  const ItemNotSelected =()=>{
+    if(list.length === 0){
+      setIsSelect(false);
     }
   }
   
-  function removeList(e){
-    context.listDispatch("remove",e);
-  }
   
-
+  
   const handleSelect = (e) => {
-    if (isSelect) {
-      removeList(e);
-    } else {
+    if (!isSelect && list.length < 4) {
       addList(e);
-      console.log("[HanddlingCards] addList: ", list);
+      setIsSelect(true);
+    } else {
+      removeList(e);
+      setIsSelect(false);
     }
-    setIsSelect(!isSelect);
+    console.log("[HCards] STATE LIST LENGTH: ", list.length);
 };
 
 React.useEffect(() => {
-    console.log(`[HanddlingCards]Card ${item.id}:${isSelect}`);
+    console.log(`[HCards]Card ${item.id}:${isSelect}`);
   },[isSelect])
 
   const styles = StyleSheet.create({

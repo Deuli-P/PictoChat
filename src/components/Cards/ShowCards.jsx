@@ -1,47 +1,65 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Card, useTheme } from 'react-native-paper'
-import { PreferencesContext } from '../../context/PreferenceContext'
+import { ThemeContext } from '../../context/ThemeContext'
+import useList from '../../context/List/ListContext'
 
 
-const ShowCards = ({item,setList,length, handleRemove}) => {
+const ShowCards = ({item}) => {
 
-  const { removeList } = React.useContext(PreferencesContext)
 
   const { theme } = useTheme();
-  const [ isDimensions, setIsDimensions ] = React.useState(null);
+
+  const { list } = useList();
+
+  const length = list.length;
+  
+  const [ isDimensionsContainer, setIsDimensionsContainer ] = React.useState(null);
+  const [ isDimensionsContent, setIsDimensionsContent ] = React.useState(null);
 
   React.useEffect(() => {
+    console.log("[ShowCards] item ", list[item].cover);
+    console.log("[ShowCards] lentgh ", list.length);
     if (length === 1) {
-      setIsDimensions(300)
+      setIsDimensionsContainer(300)
+      setIsDimensionsContent(270)
     }
     if(length === 2) {
-      setIsDimensions(185)
+      setIsDimensionsContainer(185)
+      setIsDimensionsContent(165)
     }
     else{
-      setIsDimensions(160)
+      setIsDimensionsContainer(160)
+      setIsDimensionsContent(140)
     }
-  },[length, isDimensions])
+  },[length])
 
 
   const styles = StyleSheet.create({
     container:{
-      width: isDimensions,
-      height: isDimensions,
+      width: isDimensionsContainer,
+      height: isDimensionsContainer,
       margin: 10,
       borderRadius: 10,
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding:10,
+
     },
+    image:{
+      width: isDimensionsContent,
+      height: isDimensionsContent,
+      objectFit: 'cover',
+    
+    }
   })
 
 
   return (
     <Card style={styles.container} theme={theme}
-
-      onPress={handleRemove}
+      onPress={()=>console.log("click showCard")}
     >
-      <Card.Content>
-        <Text>{item}</Text>
-      </Card.Content>
+      <Card.Cover source={{ uri: list[item].cover}} style={styles.image}/>
     </Card>
   )
 }

@@ -2,23 +2,24 @@ import { StyleSheet, Text, View } from 'react-native'
 import { useTheme} from 'react-native-paper';
 import React from 'react'
 import {
-    BottomSheetModalProvider,
     BottomSheetModal,
     BottomSheetBackdrop,
     BottomSheetHandle
   } from "@gorhom/bottom-sheet";
 import { FAB } from 'react-native-paper';
 import ShowCards from '../Cards/ShowCards';
-import { PreferencesContext } from '../../context/PreferenceContext';
+import useList from '../../context/List/ListContext';
 
-const BottomSheetModalComponent = ({theme}) => {
+const BottomSheetModalComponent = () => {
 
     const [isBottomSheetOpen, setIsBottomSheetOpen] = React.useState(false);
 
     const snapPoints = React.useMemo(() => ["80%", "95%"], []);
     const bottomSheetRefModal = React.useRef(null);
 
-    const { list } = React.useContext(PreferencesContext);
+    const { list } = useList();
+
+    const { theme } = useTheme();
 
 
     const styles = StyleSheet.create({
@@ -40,7 +41,7 @@ const BottomSheetModalComponent = ({theme}) => {
           alignItems: "center",
         },
         background: {
-          backgroundColor: theme.colors.background,
+          backgroundColor: "darkgrey",
           justifyContent: "center",
           alignItems: "center",
           flex: 1,
@@ -62,17 +63,17 @@ const BottomSheetModalComponent = ({theme}) => {
           marginVertical: 40,
         },
         ModalWindow: {
-          backgroundColor: theme.colors.onBackground,
+          backgroundColor: "white",
           width: "100%",
           borderRadius: 30,
-          shadowColor: theme.colors.shadow,
+          shadowColor: "black",
           shadowOffset: {
             width: 0,
             height: -10,
           },
           shadowOpacity: 0.4,
           shadowRadius: 5,
-          color: theme.colors.background,
+          color: "black",
         },
       });
 
@@ -88,7 +89,7 @@ const BottomSheetModalComponent = ({theme}) => {
             disappearsOnIndex={-1}
             appearsOnIndex={2}
             opacity={0.7}
-            color={theme.colors.backdrop}
+            color={"grey"}
           />
           
         ),
@@ -100,7 +101,7 @@ const BottomSheetModalComponent = ({theme}) => {
           <BottomSheetHandle
             {...props}
             opacity={0.7}
-            color={theme.colors.background}
+            // color={theme.colors.background}
             style={{ transform: [{ scaleX: 3 }]}}
           />
         ),
@@ -119,22 +120,18 @@ const BottomSheetModalComponent = ({theme}) => {
             index={0}
             style={styles.ModalWindow}
             backgroundStyle={{
-                backgroundColor: theme.colors.ModalWindow,
+                backgroundColor: "darkgrey",
             }}
             backdropComponent={renderBackdrop}
             handleComponent={renderHandledrop}
             >
             <View style={styles.background}>
-                <View style={ list?.length >2 ? styles.listContainerBig : styles.listContainerLittle} >
+                <View style={ list.length >2 ? styles.listContainerBig : styles.listContainerLittle} >
                 {list?.map((item, index) => (
                     <ShowCards 
                     key={index}
                     item={index}
                     id={index}
-                    setlist={setList}
-                    lenght={list.length}
-                    list = {list}
-                    handleRemove={null}
                     />
                     ))
                 }
@@ -154,7 +151,7 @@ const BottomSheetModalComponent = ({theme}) => {
             size="large"
             style={styles.buttonModalOpen}
             theme={theme}
-            disabled={list.length == 0 ? true : false}
+            disabled={list.length == 0  ? true : false}
             onPress={HandlePresentModal}
         />
     </>
@@ -163,4 +160,3 @@ const BottomSheetModalComponent = ({theme}) => {
 
 export default BottomSheetModalComponent;
 
-const styles = StyleSheet.create({})

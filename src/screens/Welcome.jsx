@@ -7,9 +7,14 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import { ThemeContext } from "../context/ThemeContext";
 
 
-const Welcome = ({ setAppOpening, isLoading }) => {
+const Welcome = ({ setAppOpening }) => {
+
+
+  const { isLoading } = React.useContext(ThemeContext);
+  
     // STYLES
     const theme = useTheme();
     const styles = StyleSheet.create({

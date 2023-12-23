@@ -1,6 +1,5 @@
 // REACT-NATIVE
 import React from "react";
-import { useColorScheme } from "react-native";
 // NAVIGATION
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer, useNavigation, useNavigationState, useRoute } from "@react-navigation/native";
@@ -11,11 +10,11 @@ import { createMaterialBottomTabNavigator } from 'react-native-paper/react-navig
 import HomeScreen from "../screens/HomeScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import Categories from "../screens/Categories";
+import { ThemeContext } from "../context/ThemeContext";
 // COMPONENTS
 
 const Stack = createNativeStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
-
 
 export default function TabStackScreen() {
 
@@ -50,10 +49,9 @@ export default function TabStackScreen() {
     );
   }
 
-
 export const StackScreen = () => {
 
-  const {theme } = useColorScheme();
+  const { theme } = React.useContext(ThemeContext)
 
     return (
             <NavigationContainer theme={theme}>

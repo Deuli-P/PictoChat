@@ -4,6 +4,7 @@ import { Appbar, Badge, Button, Icon } from 'react-native-paper';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useRoute } from "@react-navigation/native";
 import { useEffect, useState } from "react";
+import CustomNavigationBar from '../components/CustomBarNavigation';
 
 const Categories = ({navigation }) => {
 
@@ -30,27 +31,16 @@ const Categories = ({navigation }) => {
 
     return (
         <SafeAreaProvider>
-            <Appbar.Header elevated>
-                <Appbar.BackAction onPress={() => navigation.goBack()} />
-                <Appbar.Content title="Categories" />
-                <View style={{position:"relative", marginRight:40, marginTop:10, width:30,height:30, justifyContent:"center", alignItems:"center"}}>
-                    {count.length > 0 && (
-                            <>
-                                <Appbar.Action icon="trash-can" onPress={() => {setCount([]);}} size={30} />
-                                <Badge style={{position: "absolute", top:-15,right:-15}} size={24}>{count.length <=3 ? (count.length): ("max")}</Badge>
-                            </>
-                            )}
-                        </View>
-            </Appbar.Header>
-        <View>
-            <Text>Categories</Text>
-            <Button onPress={()=> addCount()}>
-                Add Count
-            </Button>
-            <Text 
-            > Count : {count.length}
-            </Text>
-        </View>
+            <CustomNavigationBar title={`${titleCat} || Catégories`} />
+            <View>
+                <Text>Categories</Text>
+                <Button onPress={()=> addCount()}>
+                    Add Count
+                </Button>
+                <Text 
+                > Count : {count.length}
+                </Text>
+            </View>
         </SafeAreaProvider>
     );
 };

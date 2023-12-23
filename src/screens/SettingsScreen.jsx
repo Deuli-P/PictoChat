@@ -2,15 +2,15 @@ import { View, Text, TouchableOpacity, StyleSheet, useColorScheme,  } from 'reac
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import { useTheme, Button, Switch, Appbar } from 'react-native-paper';
-import { PreferencesContext } from '../context/PreferenceContext';
+import { ThemeContext } from '../context/ThemeContext';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import  CustomNavigationBar  from '../components/CustomBarNavigation';
 
-const SettingsScreen = ({navigation}) => {
+const SettingsScreen = ({navigation, route}) => {
 
 
-    const theme = useTheme();
 
-  const { toggleTheme, isThemeDark } = React.useContext(PreferencesContext);
+  const { toggleTheme, isThemeDark, theme } = React.useContext(ThemeContext);
     
     const styles = StyleSheet.create({
         button: {
@@ -45,10 +45,7 @@ const SettingsScreen = ({navigation}) => {
 
     return (
         <SafeAreaProvider>
-            <Appbar.Header elevated>
-                <Appbar.BackAction onPress={() => navigation.goBack()} />
-                <Appbar.Content title="Paramêtres" />
-            </Appbar.Header>
+            <CustomNavigationBar title="Parametres" />
             <View style={styles.background}>
                 <Text style={styles.title}>
                     Settings Screen
