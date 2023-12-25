@@ -8,7 +8,7 @@ import {
 import { FAB } from 'react-native-paper';
 import ShowCards from '../Cards/ShowCards';
 import useList from '../../context/List/ListContext';
-import { ThemeContext } from '../../context/ThemeContext';
+import { useDataSet } from '../../context/DataContext';
 
 const BottomSheetModalComponent = () => {
 
@@ -19,7 +19,7 @@ const BottomSheetModalComponent = () => {
 
     const { list } = useList();
 
-    const { theme } = React.useContext(ThemeContext);
+    const { theme } = useDataSet();
 
 
     const styles = StyleSheet.create({

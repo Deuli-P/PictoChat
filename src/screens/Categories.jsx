@@ -5,7 +5,7 @@ import { useRoute } from "@react-navigation/native";
 import CustomNavigationBar from '../components/CustomBarNavigation';
 import useList from '../context/List/ListContext';
 import HanddlingCards from '../components/Cards/HanddlingCards';
-import { ThemeContext } from '../context/ThemeContext';
+import { useDataSet } from '../context/DataContext';
 import { Icon } from 'react-native-paper';
 
 const Categories = () => {
@@ -16,11 +16,9 @@ const Categories = () => {
     const route = useRoute();
     const titleCat = route.params.title;
     const idCat = route.params.id;
-    const dataFetch = route.params.data;
-    
     
     //STYLES
-    const { theme } = React.useContext(ThemeContext);
+    const { theme, dataStore } = useDataSet();
     const styles = StyleSheet.create({
         text: {
             color: theme.colors.onError,
@@ -66,7 +64,7 @@ const Categories = () => {
     React.useEffect(() => {
         const Filter =  async() => {
             try{
-                const newList = await dataFetch.filter((item) => item.albumId === idCat);
+                const newList = await dataStore.filter((item) => item.albumId === idCat);
                 console.log("[Categories] Filtré");
                 setFilteredList(newList);
                 setIsLoading(false);
@@ -98,7 +96,7 @@ const Categories = () => {
                         {filteredList.map((item) => (
                             <HanddlingCards
                                 item={item}
-                                key={item.id}
+                                key={`categorie_${item.id}`}
                                 theme={theme}
                                 />
                         ))}

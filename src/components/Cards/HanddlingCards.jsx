@@ -2,12 +2,12 @@
 import { StyleSheet } from 'react-native'
 import React from 'react'
 import { Card, Icon } from 'react-native-paper';
-import { ThemeContext } from '../../context/ThemeContext';
+import { useDataSet } from '../../context/DataContext';
 import useList from '../../context/List/ListContext';
 
 const HanddlingCards = ({item}) => {
   
-  const { theme } = React.useContext(ThemeContext);
+  const { theme } = useDataSet();
   const [ isSelect, setIsSelect ] = React.useState(false)
   const [ alreadyInList, setAlreadyInList ] = React.useState(false)
 

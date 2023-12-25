@@ -1,14 +1,19 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, FlatList, ScrollView} from 'react-native';
+import { View, Text, StyleSheet, ScrollView} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import { useTheme, Button, Appbar, Portal, ActivityIndicator} from 'react-native-paper';
+import { useTheme, ActivityIndicator} from 'react-native-paper';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { fetchingData } from '../config/Axios';
 import HanddlingCards from '../components/Cards/HanddlingCards';
 import CustomNavigationBar from '../components/CustomBarNavigation';
 import CategoriesCards from '../components/Cards/CategoriesCards';
+import SearchBar from '../components/SearchBar/SearchBar';
+import { useDataSet } from '../context/DataContext';
 
 const HomeScreen = () => {
+
+    const [ isLoading, setIsLoading ] = React.useState(true);
+
+    const { dataStore, theme } = useDataSet();
     // NAVIGATION
     const navigation = useNavigation();
     const navigateToSettings = () => {
@@ -18,7 +23,6 @@ const HomeScreen = () => {
         navigation.navigate('Categories');
     }
     // STYLES
-    const theme = useTheme();
     const styles = StyleSheet.create({
         button: {
             backgroundColor: theme.colors.primary,
@@ -46,28 +50,32 @@ const HomeScreen = () => {
             paddingHorizontal: 10,
         }
     });
+    const [searchQuery, setSearchQuery] = React.useState('');
 
     // FETCH DATA
-    const [dataFetch, setDataFetch] = React.useState();
-    const [isLoading, setIsLoading] = React.useState(true);
+    const [dataShow, setDataShow] = React.useState([]);
     const [error, setError] = React.useState();
 
+    
     React.useEffect(() => {
-
-        const fetchData = async () => {
-            try {
-                const data = await fetchingData();
-                setDataFetch(data);
-                console.log('[HomeScreen] dataFetch: ok');
-                setIsLoading(false);
-            } catch (error) {
-                setError(error);
-                setIsLoading(true);
+        const dataFilter = ()=> {
+            console.log("[HOME] dataStore:",dataStore.length);
+            console.log("[HOME] searchQuery:",searchQuery);
+            const newData =  dataStore.filter((item) => { 
+                return item.title.toLowerCase().includes(searchQuery.toLowerCase());
+              });
+            console.log("[HOME] newData:",newData.length);
+            if (searchQuery === "") {
+                setDataShow(dataStore);
             }
-        };
-        fetchData();
-    }, []);
-
+            else {
+                console.log("[HOME] newData:",newData);
+                setDataShow(newData);
+            }
+            setIsLoading(false);
+        }
+        dataFilter();
+    },[searchQuery]);
 
     return (
         <SafeAreaProvider>
@@ -78,7 +86,7 @@ const HomeScreen = () => {
                         Catégories:
                     </Text>
                     <View>
-                        <CategoriesCards dataFetch={dataFetch}/>
+                        <CategoriesCards/>
                     </View>
                 </View>
                 <View>
@@ -91,10 +99,10 @@ const HomeScreen = () => {
                             (<ActivityIndicator size="large" style={{color: "blue"}} />)
                             :
                             (
-                                dataFetch.map((item) => (
+                                dataShow.map((item) => (
                                     <HanddlingCards
                                         item={item}
-                                        key={item.id}
+                                        key={`home_${item.id}`}
                                         theme={theme}
                                     />
                                 ))
@@ -103,6 +111,7 @@ const HomeScreen = () => {
                     </View>
                 </View>
             </ScrollView>
+            <SearchBar text={searchQuery} newText={setSearchQuery}/>
     </SafeAreaProvider>
     );
 };

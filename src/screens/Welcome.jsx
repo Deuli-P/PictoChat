@@ -2,18 +2,19 @@ import { useTheme } from "react-native-paper";
 import React from "react";
 import {
   ActivityIndicator,
+  Image,
   StyleSheet,
   Text,
   TouchableOpacity,
+  View
 } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { ThemeContext } from "../context/ThemeContext";
-
+import { useDataSet } from "../context/DataContext";
 
 const Welcome = ({ setAppOpening }) => {
 
-
-  const { isLoading } = React.useContext(ThemeContext);
+  
+  const { isLoading } = useDataSet();
   
     // STYLES
     const theme = useTheme();
@@ -51,11 +52,37 @@ const Welcome = ({ setAppOpening }) => {
         marginTop: 30,
         transform: [{ scale: 2 }],
       },
+      image:{
+        width: 200,
+        height: 200,
+        marginVertical: 10,
+      },
+      titleContainer:{
+        flexDirection: 'row',
+      },
+      titleStart:{
+        color: '#E63B1F',
+        fontSize: 40,
+        fontWeight: 'bold',
+        marginBottom: 10,
+      },
+      titleEnd:{
+        color: "#0692BC",
+        fontSize: 40,
+        fontWeight: 'bold',
+        marginBottom: 10,
+      }
+
     });
   
     return (
       <SafeAreaProvider style={styles.background}>
-        <Text style={styles.title}>Welcome</Text>
+        <Text style={styles.title}>Welcome on</Text>
+        <Image source={require("../../assets/icons/app/Logo-Gepalemo_icon.png")} style={styles.image} alt="Logo de l'application"/>
+        <View style={styles.titleContainer}>
+        <Text style={styles.titleStart}>Picto</Text>
+        <Text style={styles.titleEnd}>Chat</Text>
+        </View>
         {isLoading ? (
           <ActivityIndicator size="large" style={styles.loader} />
         ) : (

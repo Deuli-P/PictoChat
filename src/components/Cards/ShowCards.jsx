@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Card, useTheme } from 'react-native-paper'
-import { ThemeContext } from '../../context/ThemeContext'
+import { useDataSet } from '../../context/DataContext'
 import useList from '../../context/List/ListContext'
 
 
 const ShowCards = ({item}) => {
 
 
-  const { theme } = React.useContext(ThemeContext);
+  const { theme } = useDataSet();
 
   const { list } = useList();
 

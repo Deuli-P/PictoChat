@@ -10,7 +10,7 @@ import { createMaterialBottomTabNavigator } from 'react-native-paper/react-navig
 import HomeScreen from "../screens/HomeScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import Categories from "../screens/Categories";
-import { ThemeContext } from "../context/ThemeContext";
+import { useDataSet } from "../context/DataContext";
 // COMPONENTS
 
 const Stack = createNativeStackNavigator();
@@ -51,7 +51,7 @@ export default function TabStackScreen() {
 
 export const StackScreen = () => {
 
-  const { theme } = React.useContext(ThemeContext)
+  const { theme } = useDataSet();
 
     return (
             <NavigationContainer theme={theme}>

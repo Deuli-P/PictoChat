@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity} from 'react-native'
 import React from 'react'
 import { Card } from 'react-native-paper'
-import { ThemeContext } from '../../context/ThemeContext';
+import { useDataSet } from '../../context/DataContext';
 import { FlatList } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
@@ -42,7 +42,7 @@ const navigation = useNavigation();
                       }
                     ]
 
-  const { theme } = React.useContext(ThemeContext);
+  const { theme } = useDataSet()
 
   const handletoCategories = (item) => {
     navigation.navigate("Categories",
@@ -108,7 +108,7 @@ const navigation = useNavigation();
       horizontal={true}
       showsHorizontalScrollIndicator={false}
       renderItem={renderItem}
-      keyExtractor={item => item.id}
+      keyExtractor={(item) => {"catCard_"+item.id}}
     />
   )
 }
