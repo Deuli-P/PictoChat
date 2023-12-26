@@ -7,6 +7,7 @@ import useList from '../../context/List/ListContext'
 
 const ShowCards = ({item}) => {
 
+  // Click sur les ShowCard ouvrent une Dialog pour voir en plus gros ? 
 
   const { theme } = useDataSet();
 

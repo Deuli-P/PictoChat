@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "App-Iconv",
-    "slug": "App-Iconv",
+    "name": "PictoChat",
+    "slug": "PictoChat",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/adaptive-icon.png",

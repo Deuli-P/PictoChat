@@ -46,13 +46,12 @@ export const DataProvider = ({ children }) => {
       const value = await getTheme();
       if (value !== null) {
         setIsThemeDark(value);
-        console.log("[APP] Theme valide");
       }
       else{
-        alert("[APP] No theme data found")
+        setIsThemeDark(false);
       }
       const data = await getData();
-      if (data.length === 0) {
+      if (data.length === undefined || data.length === 0) {
         // En attendant le serveur
         const newData = dataImport;
         // Pour le serveur
@@ -61,11 +60,9 @@ export const DataProvider = ({ children }) => {
         // storeLastModifiedTimestamp()
         const replaceData = await getData();
         setDataStore(replaceData);
-        console.log("[APP] New Data valide:", dataStore.length);
       }
       else{
         setDataStore(data);
-        console.log("[APP] Data valide:", dataStore.length);
         }
 
     } catch (e) {
@@ -78,7 +75,6 @@ export const DataProvider = ({ children }) => {
   };
 
   React.useEffect(() => {
-    console.log("[CONTEXT] JSON:", dataImport.length);
     fetchThemeData();
   }, []);
 

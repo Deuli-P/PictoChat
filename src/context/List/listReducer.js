@@ -8,13 +8,11 @@ export default listReducer = (state, action) => {
     const { type, payload } = action;
     switch (type) {
         case "ADD_ITEM":
-            console.log("ADD_ITEM", payload);
             return {
                 ...state,
                 list: payload.list,
             };
         case "REMOVE_ITEM":
-            console.log("REMOVE_ITEM", payload);
             return {
                 ...state,
                 list: payload.list,

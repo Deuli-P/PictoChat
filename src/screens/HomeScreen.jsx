@@ -59,12 +59,9 @@ const HomeScreen = () => {
     
     React.useEffect(() => {
         const dataFilter = ()=> {
-            console.log("[HOME] dataStore:",dataStore.length);
-            console.log("[HOME] searchQuery:",searchQuery);
             const newData =  dataStore.filter((item) => { 
                 return item.name.toLowerCase().includes(searchQuery.toLowerCase());
               });
-            console.log("[HOME] newData:",newData.length);
             if (searchQuery === "") {
                 setDataShow(dataStore);
             }

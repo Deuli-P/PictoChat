@@ -1,7 +1,7 @@
 // HanddlingCard.jsx
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Image } from 'react-native'
 import React from 'react'
-import { Card, Icon } from 'react-native-paper';
+import { Badge, Card, Icon } from 'react-native-paper';
 import { useDataSet } from '../../context/DataContext';
 import useList from '../../context/List/ListContext';
 
@@ -67,10 +67,18 @@ const image =  `data:image/png;base64,${item.cover}`
       position: 'relative',
     },
     image: {
-      width: 70,
-      height: 70,
+      width: 68,
+      height: 68,
       objectFit: 'cover',
     },
+    check:{
+      position: 'absolute',
+      bottom: 3,
+      right: 3,
+      zIndex: 10,
+      backgroundColor: theme.colors.background,
+      borderRadius: 50,
+    }
   })
 
 

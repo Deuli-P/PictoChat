@@ -65,18 +65,14 @@ const Categories = () => {
         const Filter =  async() => {
             try{
                 const newList = await dataStore.filter((item) => item.categoryID === categorieId);
-                console.log("[Categories] Filtré");
                 setFilteredList(newList);
                 setIsLoading(false);
-                console.log("[Categories] newList", newList.length);
             }
             catch(error){
-                console.log("[Categories] Erreur de filtrage");
                 setIsLoading(true);
             }
         }
         Filter();
-        console.log(`[Categories] FilterList length ${titleCat}:`, filteredList.length);
     }, [isLoading]);
 
     return (
