@@ -1,9 +1,7 @@
 import  axios from 'axios';
-import { createClient } from 'pexels';
 
 
-
-//const client = 'eNec3KnX89LiCVfuNH9hur03jzIWyNVJxGcQ4s1elLeTNg0CTjwkJAAu';
+// Lorsque le serveur sera mis en place, nous utliserons ceci pour faire les requêtes
 
 const fetchPexels = axios.create({
     baseURL: 'https://jsonplaceholder.typicode.com',

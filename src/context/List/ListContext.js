@@ -7,9 +7,6 @@ const ListContext = React.createContext(initialState);
 export const ListProvider = ({ children }) => {
     const [state, dispatch] = React.useReducer(listReducer, initialState);
 
-    // si item pas dans la list alors isSelect = false
-
-
     const addList = (item) => {
                 const newItem = state.list.concat(item)
                 dispatch({

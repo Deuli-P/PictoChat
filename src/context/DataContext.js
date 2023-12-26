@@ -3,6 +3,7 @@ import React from 'react';
 import { storeTheme, getTheme, getData, storeData, storeLastModifiedTimestamp, getLastModifiedTimestamp }  from '../config/AsyncStorage';
 import { DarkTheme, LightTheme } from '../theme/themeColor';
 import { fetchingData } from '../config/Axios';
+import dataImport from '../data/dataConvert.json'
 
  const DataContext = React.createContext({
   isThemeDark: false ,
@@ -16,11 +17,10 @@ export const DataProvider = ({ children }) => {
   
   const [isLoading, setIsLoading] = React.useState(true);
 
-  // LANGUAGE
+  // LANGUAGE A implementer
   const [ lang , setLang ] = React.useState("fr");
 
   const toggleLanguage = ()=> {
-    
   }
 
   // THEME
@@ -38,10 +38,7 @@ export const DataProvider = ({ children }) => {
 
 
   // DATA
-  const [dataStore, setDataSore] = React.useState([]);
-
-
-
+  const [dataStore, setDataStore] = React.useState([]);
 
 
   const fetchThemeData = async () => {
@@ -55,17 +52,20 @@ export const DataProvider = ({ children }) => {
         alert("[APP] No theme data found")
       }
       const data = await getData();
-      if (getData.length === 0) {
-        const newData = await fetchingData();
+      if (data.length === 0) {
+        // En attendant le serveur
+        const newData = dataImport;
+        // Pour le serveur
+        // const newData = await fetchingData();
         storeData(newData);
         // storeLastModifiedTimestamp()
         const replaceData = await getData();
-        setDataSore(replaceData);
-        console.log("[APP] New Data valide:", dataStore);
+        setDataStore(replaceData);
+        console.log("[APP] New Data valide:", dataStore.length);
       }
       else{
-        setDataSore(data);
-        console.log("[APP] Data valide:", dataStore);
+        setDataStore(data);
+        console.log("[APP] Data valide:", dataStore.length);
         }
 
     } catch (e) {
@@ -78,6 +78,7 @@ export const DataProvider = ({ children }) => {
   };
 
   React.useEffect(() => {
+    console.log("[CONTEXT] JSON:", dataImport.length);
     fetchThemeData();
   }, []);
 

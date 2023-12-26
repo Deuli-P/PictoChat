@@ -13,13 +13,13 @@ const ShowCards = ({item}) => {
   const { list } = useList();
 
   const length = list.length;
+
+  const image = `data:image/png;base64,${list[item].cover}`
   
   const [ isDimensionsContainer, setIsDimensionsContainer ] = React.useState(null);
   const [ isDimensionsContent, setIsDimensionsContent ] = React.useState(null);
 
   React.useEffect(() => {
-    console.log("[ShowCards] item ", list[item].cover);
-    console.log("[ShowCards] lentgh ", list.length);
     if (length === 1) {
       setIsDimensionsContainer(300)
       setIsDimensionsContent(270)
@@ -59,7 +59,7 @@ const ShowCards = ({item}) => {
     <Card style={styles.container}
       onPress={()=>console.log("click showCard")}
     >
-      <Card.Cover source={{ uri: list[item].cover}} style={styles.image}/>
+      <Card.Cover source={{ uri: image}} style={styles.image}/>
     </Card>
   )
 }

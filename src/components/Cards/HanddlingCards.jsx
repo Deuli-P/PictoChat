@@ -16,8 +16,8 @@ const HanddlingCards = ({item}) => {
 
   const card = {
     "id": item.id,
-    "cover": item.thumbnailUrl,
-    "title": item.title,
+    "cover": item.cover,
+    "title": item.name,
   }
 
   React.useEffect(() => {
@@ -42,9 +42,9 @@ const HanddlingCards = ({item}) => {
       removeList(e);
       setIsSelect(false);
     }
-    console.log("[HCards] STATE LIST LENGTH: ", list.length);
 };
 
+const image =  `data:image/png;base64,${item.cover}`
 
   const styles = StyleSheet.create({
     containerSelected:{
@@ -67,8 +67,8 @@ const HanddlingCards = ({item}) => {
       position: 'relative',
     },
     image: {
-      width: 75,
-      height: 75,
+      width: 70,
+      height: 70,
       objectFit: 'cover',
     },
   })
@@ -85,7 +85,7 @@ const HanddlingCards = ({item}) => {
       style={isSelect ? styles.containerSelected : styles.containerUnSelected}
       id={item.id}
       onPress={()=>handleSelect(card)}>
-         <Card.Cover source={{uri:item.thumbnailUrl}} alt={item.title} style={styles.image}/>
+         <Card.Cover source={{uri:image}} alt={item.title} style={styles.image}/>
     </Card>
   )
 }

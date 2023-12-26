@@ -1,0 +1,1436 @@
+[
+  {
+    "name": "riviere",
+    "id": 7821,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/riviere.webp"
+  },
+  {
+    "name": "velo",
+    "id": 8879,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/velo.webp"
+  },
+  {
+    "name": "wagon-restaurant",
+    "id": 3403,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/wagon-restaurant.webp"
+  },
+  {
+    "name": "casque-de-velo",
+    "id": 4407,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/casque-de-velo.webp"
+  },
+  {
+    "name": "ticket-de-parking",
+    "id": 2891,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/ticket-de-parking.webp"
+  },
+  {
+    "name": "permis-de-conduire",
+    "id": 4565,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/permis-de-conduire.webp"
+  },
+  {
+    "name": "jerican-d-essence",
+    "id": 983,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/jerican-d-essence.webp"
+  },
+  {
+    "name": "fourriere",
+    "id": 5214,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/fourriere.webp"
+  },
+  {
+    "name": "revision-voiture",
+    "id": 6870,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/revision-voiture.webp"
+  },
+  {
+    "name": "contrat-de-location",
+    "id": 6352,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/contrat-de-location.webp"
+  },
+  {
+    "name": "tapis-roulant",
+    "id": 9112,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/tapis-roulant.webp"
+  },
+  {
+    "name": "retroviseur-exterieur",
+    "id": 2481,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/retroviseur-exterieur.webp"
+  },
+  {
+    "name": "valise",
+    "id": 5883,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/valise.webp"
+  },
+  {
+    "name": "pont",
+    "id": 9839,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/pont.webp"
+  },
+  {
+    "name": "permis-de-conduire-voitrue",
+    "id": 4201,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/permis-de-conduire-voitrue.webp"
+  },
+  {
+    "name": "siege",
+    "id": 9437,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/siege.webp"
+  },
+  {
+    "name": "roue-crevaison",
+    "id": 2461,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/roue-crevaison.webp"
+  },
+  {
+    "name": "cle-voiture",
+    "id": 720,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/cle-voiture.webp"
+  },
+  {
+    "name": "train",
+    "id": 3240,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/train.webp"
+  },
+  {
+    "name": "trotinnette",
+    "id": 5736,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/trotinnette.webp"
+  },
+  {
+    "name": "aeroport",
+    "id": 8576,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/aeroport.webp"
+  },
+  {
+    "name": "sac-a-dos",
+    "id": 1543,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/sac-a-dos.webp"
+  },
+  {
+    "name": "pompe-a-essence",
+    "id": 1051,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/pompe-a-essence.webp"
+  },
+  {
+    "name": "pompe-a-velo",
+    "id": 4891,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/pompe-a-velo.webp"
+  },
+  {
+    "name": "gare-de-train",
+    "id": 7248,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/gare-de-train.webp"
+  },
+  {
+    "name": "pression-des-pneus",
+    "id": 7587,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/pression-des-pneus.webp"
+  },
+  {
+    "name": "triangle",
+    "id": 3450,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/triangle.webp"
+  },
+  {
+    "name": "place-de-parking",
+    "id": 6473,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/place-de-parking.webp"
+  },
+  {
+    "name": "paquebot",
+    "id": 4424,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/paquebot.webp"
+  },
+  {
+    "name": "garagiste",
+    "id": 3892,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/garagiste.webp"
+  },
+  {
+    "name": "locker",
+    "id": 8402,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/locker.webp"
+  },
+  {
+    "name": "batterie-voiture",
+    "id": 507,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/batterie-voiture.webp"
+  },
+  {
+    "name": "accident-de-voiture",
+    "id": 4287,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/accident-de-voiture.webp"
+  },
+  {
+    "name": "bateau",
+    "id": 5107,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/bateau.webp"
+  },
+  {
+    "name": "siege-enfant-voiture",
+    "id": 6313,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/siege-enfant-voiture.webp"
+  },
+  {
+    "name": "moto",
+    "id": 5727,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/moto.webp"
+  },
+  {
+    "name": "tram",
+    "id": 39,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/tram.webp"
+  },
+  {
+    "name": "ticket",
+    "id": 1738,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/ticket.webp"
+  },
+  {
+    "name": "detecteur-de-metal",
+    "id": 1553,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/detecteur-de-metal.webp"
+  },
+  {
+    "name": "arret-de-bus",
+    "id": 8218,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/arret-de-bus.webp"
+  },
+  {
+    "name": "gilet-de-securite",
+    "id": 2754,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/gilet-de-securite.webp"
+  },
+  {
+    "name": "location-de-voiture",
+    "id": 9085,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/location-de-voiture.webp"
+  },
+  {
+    "name": "autobus-a-imperiale",
+    "id": 8465,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/autobus-a-imperiale.webp"
+  },
+  {
+    "name": "terre-logo",
+    "id": 6617,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/terre-logo.webp"
+  },
+  {
+    "name": "metro",
+    "id": 209,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/metro.webp"
+  },
+  {
+    "name": "velo-electrique",
+    "id": 6114,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/velo-electrique.webp"
+  },
+  {
+    "name": "voiture",
+    "id": 6019,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/voiture.webp"
+  },
+  {
+    "name": "camion-semi-remorque",
+    "id": 4750,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/camion-semi-remorque.webp"
+  },
+  {
+    "name": "roue",
+    "id": 453,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/roue.webp"
+  },
+  {
+    "name": "escalier-mecanique",
+    "id": 6534,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/escalier-mecanique.webp"
+  },
+  {
+    "name": "van",
+    "id": 6874,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/van.webp"
+  },
+  {
+    "name": "bus",
+    "id": 5280,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/bus.webp"
+  },
+  {
+    "name": "parebrise-casse",
+    "id": 5326,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/parebrise-casse.webp"
+  },
+  {
+    "name": "casque-moto",
+    "id": 2541,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/casque-moto.webp"
+  },
+  {
+    "name": "hublot-avion",
+    "id": 7538,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/hublot-avion.webp"
+  },
+  {
+    "name": "bureau-du-parking",
+    "id": 5152,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/bureau-du-parking.webp"
+  },
+  {
+    "name": "taxi",
+    "id": 2545,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/taxi.webp"
+  },
+  {
+    "name": "scooter",
+    "id": 7664,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/scooter.webp"
+  },
+  {
+    "name": "avion",
+    "id": 225,
+    "categoryID": 1,
+    "cover": "./App-Iconv/assets/images/1/avion.webp"
+  },
+  {
+    "name": "soft-drink",
+    "id": 7400,
+    "categoryID": 4,
+    "cover": "./App-Iconv/assets/images/4/soft-drink.webp"
+  },
+  {
+    "name": "5-stars",
+    "id": 5382,
+    "categoryID": 3,
+    "cover": "./App-Iconv/assets/images/3/5-stars.webp"
+  },
+  {
+    "name": "jacuzzi",
+    "id": 7536,
+    "categoryID": 3,
+    "cover": "./App-Iconv/assets/images/3/jacuzzi.webp"
+  },
+  {
+    "name": "extincteur-dincendie",
+    "id": 4934,
+    "categoryID": 3,
+    "cover": "./App-Iconv/assets/images/3/extincteur-dincendie.webp"
+  },
+  {
+    "name": "douche",
+    "id": 6039,
+    "categoryID": 3,
+    "cover": "./App-Iconv/assets/images/3/douche.webp"
+  },
+  {
+    "name": "bathrope",
+    "id": 2128,
+    "categoryID": 3,
+    "cover": "./App-Iconv/assets/images/3/bathrope.webp"
+  },
+  {
+    "name": "lit-superpose",
+    "id": 7535,
+    "categoryID": 3,
+    "cover": "./App-Iconv/assets/images/3/lit-superpose.webp"
+  },
+  {
+    "name": "pillow",
+    "id": 8240,
+    "categoryID": 3,
+    "cover": "./App-Iconv/assets/images/3/pillow.webp"
+  },
+  {
+    "name": "baignoire",
+    "id": 4367,
+    "categoryID": 3,
+    "cover": "./App-Iconv/assets/images/3/baignoire.webp"
+  },
+  {
+    "name": "service-de-chambre",
+    "id": 1068,
+    "categoryID": 3,
+    "cover": "./App-Iconv/assets/images/3/service-de-chambre.webp"
+  },
+  {
+    "name": "coffre-fort",
+    "id": 414,
+    "categoryID": 3,
+    "cover": "./App-Iconv/assets/images/3/coffre-fort.webp"
+  },
+  {
+    "name": "piscine",
+    "id": 2220,
+    "categoryID": 3,
+    "cover": "./App-Iconv/assets/images/3/piscine.webp"
+  },
+  {
+    "name": "bed",
+    "id": 5515,
+    "categoryID": 3,
+    "cover": "./App-Iconv/assets/images/3/bed.webp"
+  },
+  {
+    "name": "cuisinier",
+    "id": 2706,
+    "categoryID": 3,
+    "cover": "./App-Iconv/assets/images/3/cuisinier.webp"
+  },
+  {
+    "name": "service-voiturier",
+    "id": 1670,
+    "categoryID": 3,
+    "cover": "./App-Iconv/assets/images/3/service-voiturier.webp"
+  },
+  {
+    "name": "mousse-a-raser",
+    "id": 6719,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/mousse-a-raser.webp"
+  },
+  {
+    "name": "sang",
+    "id": 2343,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/sang.webp"
+  },
+  {
+    "name": "office-du-tourisme",
+    "id": 7888,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/office-du-tourisme.webp"
+  },
+  {
+    "name": "distributeur",
+    "id": 2159,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/distributeur.webp"
+  },
+  {
+    "name": "nerf",
+    "id": 9917,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/nerf.webp"
+  },
+  {
+    "name": "lettre",
+    "id": 5964,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/lettre.webp"
+  },
+  {
+    "name": "ambulance",
+    "id": 9204,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/ambulance.webp"
+  },
+  {
+    "name": "lessive",
+    "id": 973,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/lessive.webp"
+  },
+  {
+    "name": "bouche",
+    "id": 1918,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/bouche.webp"
+  },
+  {
+    "name": "chapeau",
+    "id": 7511,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/chapeau.webp"
+  },
+  {
+    "name": "bandage",
+    "id": 6571,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/bandage.webp"
+  },
+  {
+    "name": "talons-hauts",
+    "id": 1198,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/talons-hauts.webp"
+  },
+  {
+    "name": "fauteuil-roulant",
+    "id": 2393,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/fauteuil-roulant.webp"
+  },
+  {
+    "name": "shampoing",
+    "id": 9805,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/shampoing.webp"
+  },
+  {
+    "name": "charger",
+    "id": 8091,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/charger.webp"
+  },
+  {
+    "name": "billet",
+    "id": 7001,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/billet.webp"
+  },
+  {
+    "name": "Grande-roue",
+    "id": 9050,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/Grande-roue.webp"
+  },
+  {
+    "name": "machine-a-laver",
+    "id": 239,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/machine-a-laver.webp"
+  },
+  {
+    "name": "le-rasoir-ancien",
+    "id": 5639,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/le-rasoir-ancien.webp"
+  },
+  {
+    "name": "platre",
+    "id": 5857,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/platre.webp"
+  },
+  {
+    "name": "go-pro",
+    "id": 4224,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/go-pro.webp"
+  },
+  {
+    "name": "toilette",
+    "id": 6170,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/toilette.webp"
+  },
+  {
+    "name": "vieil-homme",
+    "id": 9108,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/vieil-homme.webp"
+  },
+  {
+    "name": "camping",
+    "id": 6642,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/camping.webp"
+  },
+  {
+    "name": "rasoir",
+    "id": 666,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/rasoir.webp"
+  },
+  {
+    "name": "reparation",
+    "id": 4256,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/reparation.webp"
+  },
+  {
+    "name": "savon",
+    "id": 8301,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/savon.webp"
+  },
+  {
+    "name": "bonnet",
+    "id": 429,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/bonnet.webp"
+  },
+  {
+    "name": "peigne",
+    "id": 7326,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/peigne.webp"
+  },
+  {
+    "name": "cigarette",
+    "id": 6457,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/cigarette.webp"
+  },
+  {
+    "name": "enfants",
+    "id": 9000,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/enfants.webp"
+  },
+  {
+    "name": "intestin",
+    "id": 2228,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/intestin.webp"
+  },
+  {
+    "name": "commisariat",
+    "id": 2837,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/commisariat.webp"
+  },
+  {
+    "name": "batterie",
+    "id": 260,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/batterie.webp"
+  },
+  {
+    "name": "poignee-de-porte",
+    "id": 4579,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/poignee-de-porte.webp"
+  },
+  {
+    "name": "serviette",
+    "id": 259,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/serviette.webp"
+  },
+  {
+    "name": "genou",
+    "id": 1998,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/genou.webp"
+  },
+  {
+    "name": "Antartique",
+    "id": 6329,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/Antartique.webp"
+  },
+  {
+    "name": "maillot-de-bain-homme",
+    "id": 6778,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/maillot-de-bain-homme.webp"
+  },
+  {
+    "name": "fil-dentaire",
+    "id": 5771,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/fil-dentaire.webp"
+  },
+  {
+    "name": "smartphone",
+    "id": 3803,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/smartphone.webp"
+  },
+  {
+    "name": "Afrique",
+    "id": 4227,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/Afrique.webp"
+  },
+  {
+    "name": "vieille-femme",
+    "id": 9858,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/vieille-femme.webp"
+  },
+  {
+    "name": "cour-de-recreation",
+    "id": 7705,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/cour-de-recreation.webp"
+  },
+  {
+    "name": "jambe",
+    "id": 504,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/jambe.webp"
+  },
+  {
+    "name": "portefeuille",
+    "id": 4493,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/portefeuille.webp"
+  },
+  {
+    "name": "robe",
+    "id": 2744,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/robe.webp"
+  },
+  {
+    "name": "bougie",
+    "id": 587,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/bougie.webp"
+  },
+  {
+    "name": "livreur",
+    "id": 3253,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/livreur.webp"
+  },
+  {
+    "name": "bague",
+    "id": 5575,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/bague.webp"
+  },
+  {
+    "name": "coude",
+    "id": 5922,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/coude.webp"
+  },
+  {
+    "name": "banque",
+    "id": 8891,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/banque.webp"
+  },
+  {
+    "name": "femme",
+    "id": 3761,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/femme.webp"
+  },
+  {
+    "name": "tondeuse",
+    "id": 7606,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/tondeuse.webp"
+  },
+  {
+    "name": "chaussures",
+    "id": 1145,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/chaussures.webp"
+  },
+  {
+    "name": "argent",
+    "id": 9736,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/argent.webp"
+  },
+  {
+    "name": "hanche",
+    "id": 7085,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/hanche.webp"
+  },
+  {
+    "name": "pied",
+    "id": 8667,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/pied.webp"
+  },
+  {
+    "name": "lingette",
+    "id": 1141,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/lingette.webp"
+  },
+  {
+    "name": "jupe",
+    "id": 1119,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/jupe.webp"
+  },
+  {
+    "name": "carte-medicale",
+    "id": 5967,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/carte-medicale.webp"
+  },
+  {
+    "name": "epilateur",
+    "id": 3866,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/epilateur.webp"
+  },
+  {
+    "name": "anti-moustique-logo",
+    "id": 9716,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/anti-moustique-logo.webp"
+  },
+  {
+    "name": "coeur",
+    "id": 7613,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/coeur.webp"
+  },
+  {
+    "name": "dent",
+    "id": 5402,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/dent.webp"
+  },
+  {
+    "name": "collier",
+    "id": 7383,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/collier.webp"
+  },
+  {
+    "name": "casque",
+    "id": 5141,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/casque.webp"
+  },
+  {
+    "name": "police",
+    "id": 3664,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/police.webp"
+  },
+  {
+    "name": "pharmacie",
+    "id": 786,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/pharmacie.webp"
+  },
+  {
+    "name": "hopital",
+    "id": 8743,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/hopital.webp"
+  },
+  {
+    "name": "Europe",
+    "id": 548,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/Europe.webp"
+  },
+  {
+    "name": "hoodie",
+    "id": 7026,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/hoodie.webp"
+  },
+  {
+    "name": "Amerique-du-sud",
+    "id": 629,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/Amerique-du-sud.webp"
+  },
+  {
+    "name": "casquette",
+    "id": 218,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/casquette.webp"
+  },
+  {
+    "name": "carte-sim",
+    "id": 3547,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/carte-sim.webp"
+  },
+  {
+    "name": "lingettes",
+    "id": 7757,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/lingettes.webp"
+  },
+  {
+    "name": "couche-pour-bebe",
+    "id": 5157,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/couche-pour-bebe.webp"
+  },
+  {
+    "name": "seringue",
+    "id": 9031,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/seringue.webp"
+  },
+  {
+    "name": "montre-bracelet",
+    "id": 6400,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/montre-bracelet.webp"
+  },
+  {
+    "name": "mirroir",
+    "id": 4544,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/mirroir.webp"
+  },
+  {
+    "name": "brochure",
+    "id": 5384,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/brochure.webp"
+  },
+  {
+    "name": "gorge",
+    "id": 321,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/gorge.webp"
+  },
+  {
+    "name": "trepied",
+    "id": 4746,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/trepied.webp"
+  },
+  {
+    "name": "bureau-de-poste",
+    "id": 5713,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/bureau-de-poste.webp"
+  },
+  {
+    "name": "epaule",
+    "id": 654,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/epaule.webp"
+  },
+  {
+    "name": "oeil",
+    "id": 4190,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/oeil.webp"
+  },
+  {
+    "name": "culotte",
+    "id": 5205,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/culotte.webp"
+  },
+  {
+    "name": "Asie",
+    "id": 9863,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/Asie.webp"
+  },
+  {
+    "name": "creme-solaire",
+    "id": 7919,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/creme-solaire.webp"
+  },
+  {
+    "name": "deodorant",
+    "id": 8716,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/deodorant.webp"
+  },
+  {
+    "name": "bras",
+    "id": 1398,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/bras.webp"
+  },
+  {
+    "name": "bequille",
+    "id": 163,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/bequille.webp"
+  },
+  {
+    "name": "le-rasoir",
+    "id": 9904,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/le-rasoir.webp"
+  },
+  {
+    "name": "distributeur-de-billet",
+    "id": 6402,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/distributeur-de-billet.webp"
+  },
+  {
+    "name": "maillot-de-bain-femme-1-piece",
+    "id": 7281,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/maillot-de-bain-femme-1-piece.webp"
+  },
+  {
+    "name": "information",
+    "id": 275,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/information.webp"
+  },
+  {
+    "name": "veines",
+    "id": 5462,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/veines.webp"
+  },
+  {
+    "name": "foie",
+    "id": 9981,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/foie.webp"
+  },
+  {
+    "name": "veste",
+    "id": 4891,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/veste.webp"
+  },
+  {
+    "name": "masque",
+    "id": 1014,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/masque.webp"
+  },
+  {
+    "name": "chemise-longue-manche",
+    "id": 737,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/chemise-longue-manche.webp"
+  },
+  {
+    "name": "bebe",
+    "id": 1790,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/bebe.webp"
+  },
+  {
+    "name": "chapeau-marron",
+    "id": 2202,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/chapeau-marron.webp"
+  },
+  {
+    "name": "cotes-humaines",
+    "id": 4535,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/cotes-humaines.webp"
+  },
+  {
+    "name": "coiffeur",
+    "id": 8976,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/coiffeur.webp"
+  },
+  {
+    "name": "me\u0301dicament",
+    "id": 3234,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/me\u0301dicament.webp"
+  },
+  {
+    "name": "bracelet",
+    "id": 3538,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/bracelet.webp"
+  },
+  {
+    "name": "cotons-tiges",
+    "id": 6063,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/cotons-tiges.webp"
+  },
+  {
+    "name": "Barbier",
+    "id": 6664,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/Barbier.webp"
+  },
+  {
+    "name": "maillot-de-bain-femme-2-pieces",
+    "id": 3525,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/maillot-de-bain-femme-2-pieces.webp"
+  },
+  {
+    "name": "gelules",
+    "id": 7853,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/gelules.webp"
+  },
+  {
+    "name": "anti-moustique",
+    "id": 8904,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/anti-moustique.webp"
+  },
+  {
+    "name": "calecon",
+    "id": 9627,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/calecon.webp"
+  },
+  {
+    "name": "pieces",
+    "id": 4831,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/pieces.webp"
+  },
+  {
+    "name": "epilation",
+    "id": 2157,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/epilation.webp"
+  },
+  {
+    "name": "ecouteurs-sans-fil",
+    "id": 8928,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/ecouteurs-sans-fil.webp"
+  },
+  {
+    "name": "Americque-du-nord",
+    "id": 652,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/Americque-du-nord.webp"
+  },
+  {
+    "name": "pansement",
+    "id": 8375,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/pansement.webp"
+  },
+  {
+    "name": "Carte-credit",
+    "id": 8326,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/Carte-credit.webp"
+  },
+  {
+    "name": "sanitary-pad",
+    "id": 2820,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/sanitary-pad.webp"
+  },
+  {
+    "name": "telephone-publique",
+    "id": 2718,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/telephone-publique.webp"
+  },
+  {
+    "name": "marte-sd",
+    "id": 2867,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/marte-sd.webp"
+  },
+  {
+    "name": "lunettes-de-soleil",
+    "id": 2243,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/lunettes-de-soleil.webp"
+  },
+  {
+    "name": "homme",
+    "id": 1013,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/homme.webp"
+  },
+  {
+    "name": "boite-de-mouchoir",
+    "id": 143,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/boite-de-mouchoir.webp"
+  },
+  {
+    "name": "camera",
+    "id": 5539,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/camera.webp"
+  },
+  {
+    "name": "bouchon-doreille",
+    "id": 7278,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/bouchon-doreille.webp"
+  },
+  {
+    "name": "appareil-photo",
+    "id": 5884,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/appareil-photo.webp"
+  },
+  {
+    "name": "prise",
+    "id": 459,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/prise.webp"
+  },
+  {
+    "name": "crane",
+    "id": 1977,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/crane.webp"
+  },
+  {
+    "name": "briquet",
+    "id": 851,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/briquet.webp"
+  },
+  {
+    "name": "boite-aux-lettre",
+    "id": 4052,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/boite-aux-lettre.webp"
+  },
+  {
+    "name": "poumons",
+    "id": 6050,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/poumons.webp"
+  },
+  {
+    "name": "bottes",
+    "id": 8136,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/bottes.webp"
+  },
+  {
+    "name": "penis",
+    "id": 3931,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/penis.webp"
+  },
+  {
+    "name": "preservatif",
+    "id": 3615,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/preservatif.webp"
+  },
+  {
+    "name": "seins",
+    "id": 3197,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/seins.webp"
+  },
+  {
+    "name": "lampe-de-poche",
+    "id": 595,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/lampe-de-poche.webp"
+  },
+  {
+    "name": "cheville",
+    "id": 8379,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/cheville.webp"
+  },
+  {
+    "name": "langue",
+    "id": 9254,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/langue.webp"
+  },
+  {
+    "name": "fast-food",
+    "id": 5769,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/fast-food.webp"
+  },
+  {
+    "name": "passport",
+    "id": 9889,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/passport.webp"
+  },
+  {
+    "name": "os",
+    "id": 4629,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/os.webp"
+  },
+  {
+    "name": "papier-toilette",
+    "id": 1542,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/papier-toilette.webp"
+  },
+  {
+    "name": "machine-a-jeu",
+    "id": 2552,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/machine-a-jeu.webp"
+  },
+  {
+    "name": "brosse-a-dent",
+    "id": 8521,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/brosse-a-dent.webp"
+  },
+  {
+    "name": "nez",
+    "id": 150,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/nez.webp"
+  },
+  {
+    "name": "boite",
+    "id": 3171,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/boite.webp"
+  },
+  {
+    "name": "pillule-contraceptive",
+    "id": 1923,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/pillule-contraceptive.webp"
+  },
+  {
+    "name": "batterie-externe",
+    "id": 3548,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/batterie-externe.webp"
+  },
+  {
+    "name": "creme",
+    "id": 5264,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/creme.webp"
+  },
+  {
+    "name": "pantalon",
+    "id": 4992,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/pantalon.webp"
+  },
+  {
+    "name": "oreille",
+    "id": 1772,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/oreille.webp"
+  },
+  {
+    "name": "pile",
+    "id": 1713,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/pile.webp"
+  },
+  {
+    "name": "muscle",
+    "id": 4814,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/muscle.webp"
+  },
+  {
+    "name": "Mairie",
+    "id": 2495,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/Mairie.webp"
+  },
+  {
+    "name": "dos",
+    "id": 738,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/dos.webp"
+  },
+  {
+    "name": "carte",
+    "id": 9707,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/carte.webp"
+  },
+  {
+    "name": "carte-postale",
+    "id": 186,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/carte-postale.webp"
+  },
+  {
+    "name": "ciseaux",
+    "id": 297,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/ciseaux.webp"
+  },
+  {
+    "name": "colis",
+    "id": 5237,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/colis.webp"
+  },
+  {
+    "name": "estomac",
+    "id": 9145,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/estomac.webp"
+  },
+  {
+    "name": "cerveau",
+    "id": 3939,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/cerveau.webp"
+  },
+  {
+    "name": "cadenas",
+    "id": 3688,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/cadenas.webp"
+  },
+  {
+    "name": "chaussettes",
+    "id": 4960,
+    "categoryID": 2,
+    "cover": "./App-Iconv/assets/images/2/chaussettes.webp"
+  }
+]

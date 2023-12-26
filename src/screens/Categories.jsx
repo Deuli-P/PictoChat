@@ -15,7 +15,7 @@ const Categories = () => {
     // ROUTE
     const route = useRoute();
     const titleCat = route.params.title;
-    const idCat = route.params.id;
+    const categorieId = route.params.id;
     
     //STYLES
     const { theme, dataStore } = useDataSet();
@@ -64,10 +64,11 @@ const Categories = () => {
     React.useEffect(() => {
         const Filter =  async() => {
             try{
-                const newList = await dataStore.filter((item) => item.albumId === idCat);
+                const newList = await dataStore.filter((item) => item.categoryID === categorieId);
                 console.log("[Categories] Filtré");
                 setFilteredList(newList);
                 setIsLoading(false);
+                console.log("[Categories] newList", newList.length);
             }
             catch(error){
                 console.log("[Categories] Erreur de filtrage");
@@ -93,10 +94,10 @@ const Categories = () => {
                  :
                  (
                     <View style={styles.view}>
-                        {filteredList.map((item) => (
+                        {filteredList.map((item,index) => (
                             <HanddlingCards
                                 item={item}
-                                key={`categorie_${item.id}`}
+                                key={`categorie_${index}`}
                                 theme={theme}
                                 />
                         ))}

@@ -12,6 +12,7 @@ import { ListProvider } from "./src/context/List/ListContext";
 
 export default App = () => {
 
+
   return(
     <SafeAreaProvider>
       <DataProvider>

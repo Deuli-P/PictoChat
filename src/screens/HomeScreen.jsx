@@ -62,14 +62,13 @@ const HomeScreen = () => {
             console.log("[HOME] dataStore:",dataStore.length);
             console.log("[HOME] searchQuery:",searchQuery);
             const newData =  dataStore.filter((item) => { 
-                return item.title.toLowerCase().includes(searchQuery.toLowerCase());
+                return item.name.toLowerCase().includes(searchQuery.toLowerCase());
               });
             console.log("[HOME] newData:",newData.length);
             if (searchQuery === "") {
                 setDataShow(dataStore);
             }
             else {
-                console.log("[HOME] newData:",newData);
                 setDataShow(newData);
             }
             setIsLoading(false);
@@ -99,10 +98,10 @@ const HomeScreen = () => {
                             (<ActivityIndicator size="large" style={{color: "blue"}} />)
                             :
                             (
-                                dataShow.map((item) => (
+                                dataShow.map((item,index) => (
                                     <HanddlingCards
                                         item={item}
-                                        key={`home_${item.id}`}
+                                        key={`home_${index}`}
                                         theme={theme}
                                     />
                                 ))
