@@ -48,3 +48,33 @@ I used :
 [(Back to top)](#table-of-contents)
 
 All right on the images ( except the application logo ) are to Freepiks and the artist on Flaticons.com
+
+- Icon made by Freepik from www.flaticon.com
+- Icon made by Smashicons from www.flaticon.com
+- Icon made by SBTS2018 from www.flaticon.com
+- Icon made by phatplus from www.flaticon.com
+- Icon made by itim2101 from www.flaticon.com
+- Icon made by monkik from www.flaticon.com
+- Icon made by Eucalyp from www.flaticon.com
+- Icon made by Nikita Golubev from www.flaticon.com
+- Icon made by Witdhawaty from www.flaticon.com
+- Icon made by Triangle Squad from www.flaticon.com
+- Icon made by Chanut-is-Industries from www.flaticon.com
+- Icon made by AmethystDesign from www.flaticon.com
+- Icon made by juicy_fish from www.flaticon.com
+- Icon made by Konkapp from www.flaticon.com
+- Icon made by Roundicons from www.flaticon.com
+- Icon made by Flat Icons from www.flaticon.com
+- Icon made by PIXARTIST from www.flaticon.com
+- Icon made by Futuer from www.flaticon.com
+- Icon made by Pixel perfect from www.flaticon.com
+- Icon made by justicon from www.flaticon.com
+- Icon made by Nikita Golubev from www.flaticon.com
+- Icon made by Good Ware from www.flaticon.com
+- Icon made by Vitaly Gorbachev from www.flaticon.com
+- Icon made by IconBaandar from www.flaticon.com
+- Icon made by nawicon from www.flaticon.com
+- Icon made by photo3idea_studio from www.flaticon.com
+- Icon made by srip from www.flaticon.com
+- Icon made by surang from www.flaticon.com
+- Icon made by Creaticca Creative Agency from www.flaticon.com
