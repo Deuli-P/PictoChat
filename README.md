@@ -16,7 +16,15 @@ Presentation video: https://youtu.be/KEGRkovenCc
 - [License](#license)
 
 # Installation
+
 [(Back to top)](#table-of-contents)
+
+[Installation Guide for React Native (Linux)](https://josephjosedev.hashnode.dev/installation-guide-for-react-native-linux)
+
+[React Native: Prerequisites & Installation](https://mohitharge.hashnode.dev/react-native-prerequisites-installation)
+
+[Understanding Main-axis and Cross-axis in React-Native](https://sharetogrow.hashnode.dev/introduction-to-stylesheet-and-understanding-main-axis-and-cross-axis-in-react-native) 
+
 - `yarn install`
 - `yarn start`
 - push `a` to start Android Simulator
