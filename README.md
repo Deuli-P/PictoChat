@@ -27,7 +27,7 @@ Presentation video: https://youtu.be/KEGRkovenCc
 
 - `yarn install`
 - `yarn start`
-- push `a` to start Android Simulator
+- push `a` to start Android Simulator or `i` to start Iphone Simulator
 
 # Usage
 [(Back to top)](#table-of-contents)
@@ -44,11 +44,11 @@ I used :
 - Reat Navigation
 - React Native Paper
 - Async Storage
-- Axios
+- Supabase
 - Bottom Sheet from <a href='https://github.com/gorhom'/>Gorhom</a>
 
 
-  For now, I don't use the backend ( MongoDB/ Firebase/ AWS) because I don't understand the process but I will implement this feature soon.
+  For now, I'm starting to use Supabase, it's newest for me and use database and API functionnality.
 # Contribute
 [(Back to top)](#table-of-contents)
 
