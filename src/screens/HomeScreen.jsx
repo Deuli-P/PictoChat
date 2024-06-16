@@ -1,4 +1,4 @@
-import React from 'react';
+import {useEffect, useState} from 'react';
 import { View, Text, StyleSheet, ScrollView} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import { useTheme, ActivityIndicator} from 'react-native-paper';
@@ -11,7 +11,7 @@ import { useDataSet } from '../context/DataContext';
 
 const HomeScreen = () => {
 
-    const [ isLoading, setIsLoading ] = React.useState(true);
+    const [ isLoading, setIsLoading ] = useState(true);
 
     const { dataStore, theme } = useDataSet();
     // NAVIGATION
@@ -19,9 +19,7 @@ const HomeScreen = () => {
     const navigateToSettings = () => {
         navigation.navigate('Settings');
     }
-    const navigateToCategories = () => {
-        navigation.navigate('Categories');
-    }
+
     // STYLES
     const styles = StyleSheet.create({
         button: {
@@ -50,14 +48,14 @@ const HomeScreen = () => {
             paddingHorizontal: 10,
         }
     });
-    const [searchQuery, setSearchQuery] = React.useState('');
+    const [searchQuery, setSearchQuery] = useState('');
 
     // FETCH DATA
-    const [dataShow, setDataShow] = React.useState([]);
-    const [error, setError] = React.useState();
+    const [dataShow, setDataShow] = useState([]);
+    const [error, setError] = useState();
 
     
-    React.useEffect(() => {
+    useEffect(() => {
         const dataFilter = ()=> {
             const newData =  dataStore.filter((item) => { 
                 return item.name.toLowerCase().includes(searchQuery.toLowerCase());
@@ -87,7 +85,7 @@ const HomeScreen = () => {
                 </View>
                 <View>
                     <Text style={styles.title}>
-                        Derniers articles:
+                        Last updates:
                     </Text>
                     <View style={{flex: 1, flexDirection: "row", flexWrap: "wrap", justifyContent:"center", alignItems:"center",width: "100%",height: "100%"}}>
                         {error && <Text style={{color: theme.colors.error, backgroundColor: theme.colors.errorContainer}}>Une erreur est survenue</Text>}
@@ -98,7 +96,7 @@ const HomeScreen = () => {
                                 dataShow.map((item,index) => (
                                     <HanddlingCards
                                         item={item}
-                                        key={`home_${index}`}
+                                        key={`home_${item.id}`}
                                         theme={theme}
                                     />
                                 ))

@@ -87,8 +87,6 @@ const navigation = useNavigation();
 
 
 
-
-
   const renderItem=({item}) => {
     return (
         <TouchableOpacity 
@@ -106,9 +104,10 @@ const navigation = useNavigation();
     <FlatList
       data={categoriesData}
       horizontal={true}
+      key={item =>"catCard_"+item.id }
       showsHorizontalScrollIndicator={false}
       renderItem={renderItem}
-      keyExtractor={(item) => {"catCard_"+item.id}}
+      keyExtractor={(item,index) => {"catCard_"+item.id}}
     />
   )
 }

@@ -13,7 +13,7 @@ export default function CustomNavigationBar({title, route, props}) {
   const [ back, isBack ] = React.useState(false)
 
   React.useEffect(() => {
-    if (title === 'Accueil' || title === 'Paramêtres' ){
+    if (title === 'Accueil' || title === 'Paramètres' ){
       isBack(false)
     }
     else {

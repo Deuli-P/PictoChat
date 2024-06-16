@@ -15,7 +15,7 @@ const ShowCards = ({item}) => {
 
   const length = list.length;
 
-  const image = `data:image/png;base64,${list[item].cover}`
+  const image = `data:image/png;base64,${list[item].base64}`
   
   const [ isDimensionsContainer, setIsDimensionsContainer ] = React.useState(null);
   const [ isDimensionsContent, setIsDimensionsContent ] = React.useState(null);

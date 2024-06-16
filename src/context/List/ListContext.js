@@ -1,29 +1,28 @@
-import React from "react";
+import { useState , useReducer, useContext, createContext} from "react";
 import listReducer, { initialState } from "./listReducer"
+import { useDataSet } from "../DataContext";
 
-const ListContext = React.createContext(initialState);
+const ListContext = createContext(initialState);
 
 
 export const ListProvider = ({ children }) => {
-    const [state, dispatch] = React.useReducer(listReducer, initialState);
+    const [state, dispatch] = useReducer(listReducer, initialState);
 
-    const addList = (item) => {
-                const newItem = state.list.concat(item)
+    const { dataStore } = useDataSet();
+
+    const addList = (id) => {
+                const newItem = dataStore.find((item)=> item.id === id)
+                console.log("[ADD LIST] newitem:",newItem);
                 dispatch({
                     type: "ADD_ITEM",
-                    payload: {
-                        list: newItem 
-                    } 
+                    payload: newItem 
                 });
     };
 
-    const removeList = (item) => {
-        const updateList = state.list.filter((currentItem) => currentItem.title !== item.title);
+    const removeList = (id) => {
         dispatch({
             type: "REMOVE_ITEM",
-            payload: {
-                list: updateList
-            }
+            payload:id
         });
     }
 
@@ -34,12 +33,11 @@ export const ListProvider = ({ children }) => {
     };
 
     const value ={
-        list: state.list,
+        list: state,
         addList,
         removeList,
         clearList,
     };
-    
 
     return (
         <ListContext.Provider value={value}>
@@ -49,10 +47,10 @@ export const ListProvider = ({ children }) => {
 }
 
 const useList = () =>{
-    const context = React.useContext(ListContext);
+    const context = useContext(ListContext);
 
     if (context === undefined) {
-        throw new Error("useList must be used within a ListProvider");
+        throw new Error("Providers manquant");
     }
     return context;
 } 

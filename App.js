@@ -1,4 +1,5 @@
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import 'react-native-url-polyfill/auto';
 import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { StackScreen } from "./src/Navigation/NavigationStack";
@@ -12,6 +13,7 @@ import { ListProvider } from "./src/context/List/ListContext";
 
 export default App = () => {
 
+  console.log();
 
   return(
     <SafeAreaProvider>

@@ -1,11 +1,14 @@
 // PreferenceContext.js
-import React from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { storeTheme, getTheme, getData, storeData, storeLastModifiedTimestamp, getLastModifiedTimestamp }  from '../config/AsyncStorage';
 import { DarkTheme, LightTheme } from '../theme/themeColor';
-import { fetchingData } from '../config/Axios';
 import dataImport from '../data/dataConvert.json'
 
- const DataContext = React.createContext({
+import supabase from '../config/supabaseClient';
+
+// import { data, traduction } from '../../Backend/MongoDB/mongoDB';
+
+ const DataContext = createContext({
   isThemeDark: false ,
   setIsThemeDark: () => {},
   toggleTheme: () => {},
@@ -15,18 +18,18 @@ import dataImport from '../data/dataConvert.json'
 
 export const DataProvider = ({ children }) => {
   
-  const [isLoading, setIsLoading] = React.useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   // LANGUAGE A implementer
-  const [ lang , setLang ] = React.useState("fr");
+  const [ lang , setLang ] = useState("fr");
 
   const toggleLanguage = ()=> {
   }
 
   // THEME
-  const [isThemeDark, setIsThemeDark] = React.useState(null);
+  const [isThemeDark, setIsThemeDark] = useState(null);
 
-  const toggleTheme = React.useCallback(() => {
+  const toggleTheme = useCallback(() => {
     setIsThemeDark(!isThemeDark);
     const newTheme = !isThemeDark;
     storeTheme(newTheme);
@@ -38,8 +41,24 @@ export const DataProvider = ({ children }) => {
 
 
   // DATA
-  const [dataStore, setDataStore] = React.useState([]);
+  const [dataStore, setDataStore] = useState([]);
 
+
+  const fetchData = async()=> {
+    try{
+      const { data, error } = await supabase.from('pictogramme').select("*")
+      if(error){
+        console.log('[SUPABASE] Error:',error);
+      }
+      else{
+        console.table('[SUPABASE] Data:',typeof data);
+        setDataStore(data)
+      }
+    }
+    catch(err){
+    console.error(err);
+    } 
+  }
 
   const fetchThemeData = async () => {
     try {
@@ -74,11 +93,12 @@ export const DataProvider = ({ children }) => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetchThemeData();
+    fetchData()
   }, []);
 
-  const value= React.useMemo(() => ({
+  const value= useMemo(() => ({
     isThemeDark,
     setIsThemeDark,
     toggleTheme,
@@ -96,7 +116,7 @@ export const DataProvider = ({ children }) => {
 };
 
 export const useDataSet = () => {
-  const context = React.useContext(DataContext);
+  const context = useContext(DataContext);
 
   if (context === undefined) {
     throw new Error('useDataSet must be used within a AsyncProvider');

@@ -126,7 +126,7 @@ const BottomSheetModalComponent = () => {
             handleComponent={renderHandledrop}
             >
             <View style={styles.background}>
-                <View style={ list.length >2 ? styles.listContainerBig : styles.listContainerLittle} >
+                <View style={ list.length>2 ? styles.listContainerBig : styles.listContainerLittle} >
                 {list?.map((item, index) => (
                     <ShowCards 
                     key={index}

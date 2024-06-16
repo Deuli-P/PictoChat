@@ -1,6 +1,6 @@
 // HanddlingCard.jsx
 import { StyleSheet, Image } from 'react-native'
-import React from 'react'
+import { useState, useEffect } from 'react'
 import { Badge, Card, Icon } from 'react-native-paper';
 import { useDataSet } from '../../context/DataContext';
 import useList from '../../context/List/ListContext';
@@ -8,19 +8,19 @@ import useList from '../../context/List/ListContext';
 const HanddlingCards = ({item}) => {
   
   const { theme } = useDataSet();
-  const [ isSelect, setIsSelect ] = React.useState(false)
-  const [ alreadyInList, setAlreadyInList ] = React.useState(false)
+  const [ isSelect, setIsSelect ] = useState(false)
+  const [ alreadyInList, setAlreadyInList ] = useState(false)
 
 
   const { list , addList, removeList } = useList();
 
   const card = {
     "id": item.id,
-    "cover": item.cover,
-    "title": item.name,
+    "base64": item.base64,
+    "name": item.name,
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     ItemNotSelected()
   },[list])
 
@@ -35,16 +35,16 @@ const HanddlingCards = ({item}) => {
 
   const handleSelect = (e) => {
     if (!isSelect && list.length < 4) {
-        addList(e);
+        addList(e.id);
         setIsSelect(true);
         setAlreadyInList(false);
     } else {
-      removeList(e);
+      removeList(e.id);
       setIsSelect(false);
     }
 };
 
-const image =  `data:image/png;base64,${item.cover}`
+const image =  `data:image/png;base64,${item.base64}`
 
   const styles = StyleSheet.create({
     containerSelected:{
@@ -52,6 +52,7 @@ const image =  `data:image/png;base64,${item.cover}`
       height: 85,
       borderRadius: 10,
       opacity: 0.7,
+      backgroundColor: theme.colors.primary,
       justifyContent: 'center',
       alignItems: 'center',
       margin:3,
@@ -82,8 +83,8 @@ const image =  `data:image/png;base64,${item.cover}`
   })
 
 
-  React.useEffect(() => {
-    if( list.find((currentItem) => currentItem.title === item.title)){
+  useEffect(() => {
+    if( list.find((currentItem) => currentItem.id === item.id)){
       setIsSelect(true);
     }
   },[list])

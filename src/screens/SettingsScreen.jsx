@@ -90,7 +90,7 @@ const SettingsScreen = ({navigation, route}) => {
                 </View>
             </View>
                 <View style={{alignItems:"center", marginBottom: 50,}} >
-                    <Text style={styles.text}>Photos provided by Pexels</Text>
+                    <Text style={styles.text}>Images provided by Faticon.com</Text>
                 </View>
         </SafeAreaProvider>
     );

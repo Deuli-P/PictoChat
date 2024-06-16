@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect} from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useRoute } from "@react-navigation/native";
@@ -10,7 +10,7 @@ import { Icon } from 'react-native-paper';
 
 const Categories = () => {
 
-    const [ isLoading, setIsLoading ] = React.useState(true);
+    const [ isLoading, setIsLoading ] = useState(true);
 
     // ROUTE
     const route = useRoute();
@@ -60,8 +60,8 @@ const Categories = () => {
     });
 
     // FILTER
-    const [ filteredList, setFilteredList ] = React.useState([]);
-    React.useEffect(() => {
+    const [ filteredList, setFilteredList ] = useState([]);
+    useEffect(() => {
         const Filter =  async() => {
             try{
                 const newList = await dataStore.filter((item) => item.categoryID === categorieId);
