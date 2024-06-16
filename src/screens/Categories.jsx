@@ -64,7 +64,7 @@ const Categories = () => {
     useEffect(() => {
         const Filter =  async() => {
             try{
-                const newList = await dataStore.filter((item) => item.categoryID === categorieId);
+                const newList = await dataStore.filter((item) => item.categorieID === categorieId);
                 setFilteredList(newList);
                 setIsLoading(false);
             }
