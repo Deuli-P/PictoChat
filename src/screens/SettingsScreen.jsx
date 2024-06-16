@@ -1,16 +1,16 @@
-import { View, Text, TouchableOpacity, StyleSheet, useColorScheme,  } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import { useTheme, Button, Switch, Appbar } from 'react-native-paper';
-import { PreferencesContext } from '../context/PreferenceContext';
+import { Switch } from 'react-native-paper';
+import { useDataSet } from '../context/DataContext';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import  CustomNavigationBar  from '../components/CustomBarNavigation';
+import SelectLanguage from '../components/Language/SelectLanguage';
 
-const SettingsScreen = ({navigation}) => {
+const SettingsScreen = ({navigation, route}) => {
 
 
-    const theme = useTheme();
-
-  const { toggleTheme, isThemeDark } = React.useContext(PreferencesContext);
+  const { toggleTheme, isThemeDark, theme } = useDataSet();
     
     const styles = StyleSheet.create({
         button: {
@@ -20,14 +20,18 @@ const SettingsScreen = ({navigation}) => {
             borderRadius: 10,
             marginTop: 10,
             color: theme.colors.text,
+            width: "100%",
+            height: "90%",
+            flexDirection: "column",
+            alignItems: "center",
         },
         buttonText: {
             color: 'white',
         },
         background: {
             backgroundColor: theme.colors.background,
-            justifyContent: "center",
             alignItems:"center",
+            marginTop: 50,
             flex: 1,
         },
         text: {
@@ -39,32 +43,55 @@ const SettingsScreen = ({navigation}) => {
             fontSize: 40,
             fontWeight: 'bold',
             marginBottom: 10,
-        }
+        },
+        selectContainer:{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            paddingHorizontal:15,
+            width:  "100%",
+        },
+        label:{
+            marginBottom: "10%",
+            paddingHorizontal: 10,
+            color: theme.colors.onBackground,
+        },
+        containerElement:{
+            height: 100,
+            width: 100,
+        },
+        containerElementSwitch:{
+            height: 50,
+            width: 100,
+            alignItems: "flex-end",
+            marginRight: 30,
+        },
     });
-
 
     return (
         <SafeAreaProvider>
-            <Appbar.Header elevated>
-                <Appbar.BackAction onPress={() => navigation.goBack()} />
-                <Appbar.Content title="Paramêtres" />
-            </Appbar.Header>
+            <CustomNavigationBar title="Paramêtres" />
             <View style={styles.background}>
-                <Text style={styles.title}>
-                    Settings Screen
-                </Text>
-                <View style={{ flexDirection: "row",justifyContent: "center", alignItems: "center"}}>
-                    <Text style={styles.text}>
-                        Siwtch theme:
-                    </Text>
-                    <Switch 
-                    onValueChange={toggleTheme}
-                    theme={{ colors: { primary: theme.colors.primary } }}
-                    value={isThemeDark}
-                >
-                </Switch>
+                <View style={styles.selectContainer}>
+                        <Text style={styles.label}>Siwtch theme:</Text>
+                        <View style={styles.containerElementSwitch}>
+                            <Switch 
+                                onValueChange={toggleTheme}
+                                theme={{ colors: { primary: theme.colors.primary}}}
+                                value={isThemeDark}>
+                            </Switch>
+                    </View>
+                </View>
+                <View style={styles.selectContainer}>
+                    <Text style={styles.label}>Choisi ta langue:</Text>
+                    <View style={styles.containerElement}>
+                        <SelectLanguage />
+                    </View>
                 </View>
             </View>
+                <View style={{alignItems:"center", marginBottom: 50,}} >
+                    <Text style={styles.text}>Images provided by Faticon.com</Text>
+                </View>
         </SafeAreaProvider>
     );
 };

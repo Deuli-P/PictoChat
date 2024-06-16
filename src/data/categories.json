@@ -1,0 +1,31 @@
+[
+    {
+        "CategorieId": 1,
+        "title": "Transport",
+        "cover": "../../assets/icons/categories/transportation.png"
+    },
+    {
+        "CategorieId": 1,
+        "title": "Pratique",
+        "cover":"../../assets/icons/categories/hand.png"
+        
+    },
+    {
+        "CategorieId": 3,
+        "title": "Hebergement",
+        "cover":"../../assets/icons/categories/hotel.png"
+        
+    },
+    {
+        "CategorieId": 4,
+        "title": "Nourriture",
+        "cover":"../../assets/icons/categories/diet.png"
+        
+    },
+    {
+        "CategorieId": 5,
+        "title": "Loisir",
+        "cover":"../../assets/icons/categories/hobbies.png"
+        
+    }
+]

@@ -1,54 +1,106 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import { Appbar, Badge, Button } from 'react-native-paper';
+import { useState, useEffect} from 'react';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useRoute } from "@react-navigation/native";
-import { useEffect, useState } from "react";
-import App from '../../App';
+import CustomNavigationBar from '../components/CustomBarNavigation';
+import useList from '../context/List/ListContext';
+import HanddlingCards from '../components/Cards/HanddlingCards';
+import { useDataSet } from '../context/DataContext';
+import { Icon } from 'react-native-paper';
 
-const Categories = ({navigation }) => {
+const Categories = () => {
 
+    const [ isLoading, setIsLoading ] = useState(true);
+
+    // ROUTE
     const route = useRoute();
-
-     useEffect(()=>{
-     },[]);
-
-    const [count,setCount] = useState([])
-    const [showError, setShowError] = useState(false);
-
-    // const imageUri = route.params.image;
-    // const titleCat = route.params.title;
-    // const idCat = route.params.id;
-
-    const addCount = () => {
-        if(count.length < 4){
-            const nouveauTableau = [...count, 1];
-            setCount(nouveauTableau);
+    const titleCat = route.params.title;
+    const categorieId = route.params.id;
+    
+    //STYLES
+    const { theme, dataStore } = useDataSet();
+    const styles = StyleSheet.create({
+        text: {
+            color: theme.colors.onError,
+            fontSize: 20,
+            marginBottom: 5,
+        },
+        textCategorie: {
+            color: theme.colors.onError,
+            fontSize: 30,
+            marginBottom: 20,
+            fontWeight: 'bold',
+        },
+        view: {
+            flex: 1,
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '100%',
+            marginTop: 30,
+        },
+        icon:{
+        },
+        error:{
+            marginTop:70,
+            backgroundColor: theme.colors.error,
+            padding: 20,
+            marginHorizontal: 10,
+            alignItems: 'center',
+            borderRadius: 10,
+            shadowOffset: {
+                width: 5,
+                height: 5,
+            },
+            shadowOpacity: 0.34,
+            shadowRadius: 2,
+            shadowColor: theme.colors.onBackground,
         }
-    }
+    });
+
+    // FILTER
+    const [ filteredList, setFilteredList ] = useState([]);
+    useEffect(() => {
+        const Filter =  async() => {
+            try{
+                const newList = await dataStore.filter((item) => item.categoryID === categorieId);
+                setFilteredList(newList);
+                setIsLoading(false);
+            }
+            catch(error){
+                setIsLoading(true);
+            }
+        }
+        Filter();
+    }, [isLoading]);
 
     return (
         <SafeAreaProvider>
-            <Appbar.Header elevated>
-                <Appbar.BackAction onPress={() => navigation.goBack()} />
-                <Appbar.Content title="Categories" />
-                <View style={{position:"relative", marginRight:40, marginTop:10, width:30,height:30, justifyContent:"center", alignItems:"center"}}>
-                    {count.length > 0 && (
-                            <>
-                                <Appbar.Action icon="trash-can" onPress={() => {setCount([]);}} size={30} />
-                                <Badge style={{position: "absolute", top:-15,right:-15}} size={24}>{count.length <=3 ? (count.length): ("max")}</Badge>
-                            </>
-                            )}
+            <CustomNavigationBar title={titleCat ? titleCat : `Catégories`} />
+            <ScrollView>
+                 {isLoading || filteredList < 1 ? 
+                    (
+                        <View style={styles.error}>
+                            <Text style={styles.text}>Aucune image dans la catégorie:</Text>
+                            <Text style={styles.textCategorie}>{titleCat}</Text>
+                            <Icon source="emoticon-sad-outline" size={60} color={theme.colors.onError} style={styles.icon} />
                         </View>
-            </Appbar.Header>
-        <View>
-            <Text>Categories</Text>
-            <Button onPress={()=> addCount()}>
-                Add Count
-            </Button>
-            <Text 
-            > Count : {count.length}</Text>
-        </View>
+                    ) 
+                 :
+                 (
+                    <View style={styles.view}>
+                        {filteredList.map((item,index) => (
+                            <HanddlingCards
+                                item={item}
+                                key={`categorie_${index}`}
+                                theme={theme}
+                                />
+                        ))}
+                    </View>
+                )
+                }
+            </ScrollView>
         </SafeAreaProvider>
     );
 };
